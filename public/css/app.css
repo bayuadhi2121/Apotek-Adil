@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300&display=swap');
+body {
+    font-family: "Poppins";
+    font-weight: 400;
+
+    /* padding-top: 4.5rem; */
+
+}
+
+nav{
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+}
+.search {
+    position: relative;
+    outline: 0px;
+    padding-left: 25px;
+}
+
+.search input {
+    height: 40px;
+    
+    padding-left: 40px;
+    outline: 0px;
+    background-color: #F4F0F0;
+    border-radius: 50px;
+}
+
+.search input:focus {
+    box-shadow: none;
+    border-color: #1B7D53;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 12px;
+    left: 40px;
+}
+
+.nav-item{
+    padding-left: 30px;
+}
+.login{
+    position: relative;
+    background-color:#1B7D53;
+    outline-color: none;
+}
+.login:hover{
+   
+    background-color: #1B7D53 !important;
+    outline: 0px;
+}
+.keranjang{
+    position: relative;
+    outline: 0px;
+}
+
+.main{
+    position: relative;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+.section{
+    margin: 0px;
+    padding-top: 8%;
+    height: 100vh;
+    background-size: cover;
+    scroll-snap-align: start;
+}
+.container{
+    /* background-color: black; */
+    width: 100%;
+    /* margin: 0px; */
+}
+.kategori{
+    text-decoration: none;
+}
+.s2{
+    /* background-color: blue; */
+}
+
+.cari {
+    position: relative;
+    background-color: #1B7D53;
+    outline-color: none;
+}
+.resep{
+    color: #1B7D53;
+}
+.resep:hover{
+    color: #1B7D53;
+}
+.cari:hover {
+
+    background-color: #1B7D53 !important;
+    outline: 0px;
+}
+
+@media (max-width: 992px) {
+    .text{
+        margin-left: 100px;
+    }
+    .heroes{
+        margin-left: 60px;
+    }
+}
+@media (max-width: 767px) {
+    .text {
+        margin-left: 40px;
+    }
+    .heroes {
+        margin-left: 40px;
+    }
+    .cari{
+        width: 200px;
+        margin: 0px 0px 0px 0px;
+    }
+    .resep{
+        width: 200px;
+        margin: 0px 0px 0px 0px;
+    }
+}
+@media (max-width: 361px) {
+    .text {
+        margin-left: 40px;
+    }
+    .welcome{
+        font-size: 30px;
+    }
+    .welcome1{
+        font-size: 30px;
+    }
+    .welcome2{
+        font-size: 15px;
+    }
+    .heroes {
+        margin-left: 40px;
+    }
+    .cari{
+        font-size: 15px;
+        width: 110px;
+        margin: 0px 0px 0px 0px;
+    }
+    .resep{
+        font-size: 15px;
+        width: 100px;
+        margin: 0px 0px 0px 0px;
+    }
+    .button-container{
+        display: inline;
+        /* justify-content: center; */
+    }
+}
+
+
