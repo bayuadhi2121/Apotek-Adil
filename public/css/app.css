@@ -2,9 +2,6 @@
 body {
     font-family: "Poppins";
     font-weight: 400;
-
-    /* padding-top: 4.5rem; */
-
 }
 
 nav{
@@ -71,15 +68,17 @@ nav{
     scroll-snap-align: start;
 }
 .container{
-    /* background-color: black; */
     width: 100%;
-    /* margin: 0px; */
 }
 .kategori{
     text-decoration: none;
 }
-.s2{
-    /* background-color: blue; */
+.container1{
+ 
+}
+.foot{
+
+    background-color: blue;
 }
 
 .cari {

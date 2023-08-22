@@ -77,61 +77,113 @@
         <h1 class="pb-2 border-bottom">Kategori</h1>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-          <div>
-            <a href="#" class=" kategori d-flex flex-column align-items-center ">
-              <img src="{{asset('image/Group 21.png')}}" alt="" width="85px" height="85px" class="me-3">
-              <h3 class=" mb-0 fs-5 text-body-emphasis py-3">Upload Resep</h3>
+          <div class="d-flex flex-column align-items-center ">
+            <a href="#" class="kategori m-0">
+              <img src="{{asset('image/Group 21.png')}}" alt="" width="85px" height="85px" class=" icon ms-4">
+              <h3 class=" mb-0 fs-5 text-body-emphasis py-3 text">Upload Resep</h3>
             </a>
           </div>
-          <div class="pb-3">
-            <a href="#" class=" kategori d-flex flex-column align-items-center ">
-              <img src="{{asset('image/Group 22.png')}}" alt="" width="70px" height="70px" class="me-3">
-              <h3 class=" mb-0 fs-5 text-body-emphasis py-3">Obat Resep</h3>
+          <div class="pb-3 d-flex flex-column align-items-center ">
+            <a href="#" class=" kategori m-0">
+              <img src="{{asset('image/Group 22.png')}}" alt="" width="85px" height="85px" class=" icon ms-3">
+              <h3 class=" mb-0 fs-5 text-body-emphasis py-3 text">Obat Resep</h3>
             </a>
           </div>
-          <div class="pb-3">
-            <a href="#" class=" kategori d-flex flex-column align-items-center ">
-              <img src="{{asset('image/Group 23.png')}}" alt="" width="70px" height="70px" class="me-3">
-              <h3 class=" mb-0 fs-5 text-body-emphasis py-3">Obat Bebas</h3>
+          <div class="pb-3 d-flex flex-column align-items-center ">
+            <a href="#" class=" kategori m-0">
+              <img src="{{asset('image/Group 23.png')}}" alt="" width="85px" height="85px" class=" icon ms-3">
+              <h3 class=" mb-0 fs-5 text-body-emphasis py-3 text">Obat Bebas</h3>
             </a>
           </div>
-          <div class="pb-3">
-            <a href="#" class=" kategori d-flex flex-column align-items-center ">
-              <img src="{{asset('image/Group 24.png')}}" alt="" width="70px" height="70px" class="me-3">
-              <h3 class=" mb-0 fs-5 text-body-emphasis pt-3">Vitamin &<br></h3>
-              <h3 class=" fs-5 text-body-emphasis ">Supplement <br></h3>
+          <div class="pb-3 d-flex flex-column align-items-center">
+            <a href="#" class=" kategori m-0">
+              <img src="{{asset('image/Group 24.png')}}" alt="" width="85px" height="85px" class="icon ms-3">
+              <h3 class=" mb-0 fs-5 text-body-emphasis text pt-3">Vitamin &<br></h3>
+              <h3 class=" fs-5 text-body-emphasis text ">Supplement <br></h3>
             </a>
           </div>
-          <div class="pt-5">
-            <a href="#" class=" kategori d-flex flex-column align-items-center ">
-              <img src="{{asset('image/Group 25.png')}}" alt="" width="70px" height="70px" class="me-3">
-              <h3 class=" mb-0 fs-5 text-body-emphasis py-3">Ibu & Bayi</h3>
+          <div class="pt-5  d-flex flex-column align-items-center">
+            <a href="#" class=" kategori m-0 ">
+              <img src="{{asset('image/Group 25.png')}}" alt="" width="85px" height="85px" class="icon ms-2">
+              <h3 class=" mb-0 fs-5 text-body-emphasis text py-3">Ibu & Bayi</h3>
             </a>
           </div>
-          <div class="pt-5">
-            <a href="#" class=" kategori d-flex flex-column align-items-center ">
-              <img src="{{asset('image/Group 26.png')}}" alt="" width="70px" height="70px" class="me-3">
-              <h3 class=" mb-0 fs-5 text-body-emphasis pt-3">Beauty & <br></h3>
-              <h3 class=" mb-0 fs-5 text-body-emphasis pt-1">SkinCare</h3>
+          <div class="pt-5  d-flex flex-column align-items-center">
+            <a href="#" class=" kategori m-0">
+              <img src="{{asset('image/Group 26.png')}}" alt="" width="85px" height="85px" class="icon ms-1">
+              <h3 class=" mb-0 fs-5 text-body-emphasis text pt-3">Beauty & <br></h3>
+              <h3 class=" mb-0 fs-5 text-body-emphasis text pt-1">SkinCare</h3>
             </a>
           </div>
-          <div class="pt-5">
-            <a href="#" class=" kategori d-flex flex-column align-items-center ">
-              <img src="{{asset('image/Group 27.png')}}" alt="" width="70px" height="70px" class="me-3">
-              <h3 class=" mb-0 fs-5 text-body-emphasis pt-3">Alat Kesehatan<br></h3>
+          <div class="pt-5  d-flex flex-column align-items-center">
+            <a href="#" class=" kategori m-0 ">
+              <img src="{{asset('image/Group 27.png')}}" alt="" width="85px" height="85px" class="icon ms-4 ">
+              <h3 class=" mb-0 fs-5 text-body-emphasis  text pt-3">Alat Kesehatan<br></h3>
             </a>
           </div>
-          <div class="pt-5">
-            <a href="#" class=" kategori d-flex flex-column align-items-center ">
-              <img src="{{asset('image/Group 28.png')}}" alt="" width="70px" height="70px" class="me-3">
-              <h3 class=" mb-0 fs-5 text-body-emphasis pt-3">Semua Kategori<br></h3>
+          <div class="pt-5  d-flex flex-column align-items-center">
+            <a href="#" class=" kategori m-0">
+              <img src="{{asset('image/Group 28.png')}}" alt="" width="85px" height="85px" class="icon ms-4">
+              <h3 class=" mb-0 fs-5 text-body-emphasis pt-3 text">Semua Kategori<br></h3>
             </a>
           </div>
 
         </div>
       </div>
     </section>
+
+    <section class="section s3">
+      <div class="container1">
+        <h1>test</h1>
+      </div>
+      <div class="container mb-0">
+        <footer class="foot row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5  border-top">
+          <div class="col mb-3">
+            <p class="text-body-secondary">&copy; 2023</p>
+          </div>
+
+          <div class="col mb-3">
+
+          </div>
+
+          <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </section>
+
   </div>
+
   <script src="https://kit.fontawesome.com/cd233d4cf9.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   <script>
