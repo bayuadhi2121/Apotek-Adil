@@ -14,6 +14,9 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('home');
+// });
 Route::get('/', function () {
     return view('profile');
 });
