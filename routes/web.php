@@ -14,8 +14,11 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('home');
+// });
 Route::get('/', function () {
-    return view('home');
+    return view('profile');
 });
 // Route::get('/', function () {
 //     return redirect()->route('login');
