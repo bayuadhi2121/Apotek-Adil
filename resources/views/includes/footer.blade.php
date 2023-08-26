@@ -1,14 +1,14 @@
   <footer class="container py-5">
-      <div class="row">
+      <div class="row text-white">
           <div class="col-12 col-md">
-              <img class="mb-2" src="" width="180" height="auto" alt="" />
-              <small class="d-block mb-3 text-muted">&copy; 2023</small>
+              <img class="mb-2 ms-3" src="{{asset('image/logo white.png')}}" width="90" height="90" alt="" />
+              <small class="d-block mb-3 ">ApotekAdil&copy; 2023</small>
           </div>
           <div class="col-6 col-md">
               <h5>Contact Info</h5>
               <ul class="list-unstyled text-small">
                   <li class="list-item" href="#">Call Us Free - 24/7</li>
-                  <li style="color: #3682f4; font-size: 24px; font-family: 'Mulish', sans-serif; font-weight: 700" class="list-item mt-1" href="#">3200 421 000</li>
+                  <li style=" font-size: 24px; font-weight: 700" class="list-item mt-1" href="#">3200 421 000</li>
                   <li class="list-item" href="#">221 Makassar Road,<br />Street 46, Makassar</li>
               </ul>
           </div>

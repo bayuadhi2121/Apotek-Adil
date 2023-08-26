@@ -27,7 +27,7 @@
                      <!-- <input type="submit" hidden /> -->
                  </form>
                  <div class="flex-shrink-0 dropdown">
-                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                     <!-- <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                          <img src="{{asset('image/undraw_medicine_b-1-ol(1) 1.png')}} " alt="profile pic" width="32" height="32" class="rounded-circle" />
                      </a>
                      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
@@ -37,13 +37,12 @@
                              <hr class="dropdown-divider" />
                          </li>
                          <li><a class="dropdown-item" href="">Sign out</a></li>
-                     </ul>
+                     </ul> -->
                  </div>
                  <a class="btn btn-outline-primary" href="">
                      <i class="fa-solid fa-cart-shopping pe-2 " style="font-size: 17px; "></i>Cart
                  </a>
                  <a class=" btn btn-labeled btn-primary mx-2" href=""><i class="fa-solid fa-user pe-2"></i> Login</a>
-
 
              </div>
          </div>
