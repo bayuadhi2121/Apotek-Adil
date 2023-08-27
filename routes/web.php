@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,11 @@ use App\Http\Controllers\ProfileController;
 //     return view('home');
 // });
 Route::get('/', function () {
-    return view('home');
+    return view('pages.home');
 });
-// Route::get('/', function () {
-//     return redirect()->route('login');
-// });
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::resource('/profile', ProfileController::class)->only(['index']);
+Route::resource('/profile', ProfileController::class)->only(['index', 'show', 'edit']);
+Route::resource('/produk', ProdukController::class)->only(['index', 'show', 'edit']);
