@@ -18,12 +18,17 @@ use App\Http\Controllers\ProfileController;
 // Route::get('/', function () {
 //     return view('home');
 // });
+// Route::get('/', function () {
+//     return view('transaksi');
+// });
 Route::get('/', function () {
-    return view('home');
+    return view('detail');
 });
+
 // Route::get('/', function () {
 //     return redirect()->route('login');
 // });
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
