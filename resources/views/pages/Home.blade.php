@@ -18,6 +18,7 @@
                 </a>
             </div>
         </div>
+        {{-- test --}}
 
         <div class="col-lg-6 gambar">
             <img src="{{asset('image/undraw_medicine_b-1-ol(1) 1.png')}}" class="d-block mx-lg-auto img-fluid"
