@@ -5,6 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProdukControllerAdmin;
+use App\Http\Controllers\TransaksiControllerAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +26,7 @@ use App\Http\Controllers\CartController;
 //     return view('transaksi');
 // });
 Route::get('/', function () {
-    return view('pages.home');
+    return view('admin.dashboard');
 })->name('home');
 
 
@@ -41,3 +43,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::resource('/profile', ProfileController::class)->only(['index', 'show', 'edit']);
 Route::resource('/produk', ProdukController::class)->only(['index', 'show', 'edit']);
 Route::resource('/cart', CartController::class)->only(['index', 'show', 'edit']);
+
+
+
+Route::resource('/adminProduk', ProdukControllerAdmin::class)->only(['index', 'show', 'edit']);
+Route::resource('/adminTransaksi', TransaksiControllerAdmin::class)->only(['index', 'show', 'edit']);
