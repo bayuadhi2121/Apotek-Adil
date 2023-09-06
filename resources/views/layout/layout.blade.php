@@ -3,6 +3,7 @@
 
 <head>
     @include('includes.head')
+    @livewireStyles()
 </head>
 
 <body>
@@ -16,6 +17,7 @@
     </div>
 
     @include('includes.script')
+    @livewireScripts()
 </body>
 
 </html>

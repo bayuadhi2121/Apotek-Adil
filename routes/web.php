@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,9 @@ use App\Http\Controllers\ProdukController;
 //     return view('transaksi');
 // });
 Route::get('/', function () {
-    return view('detail');
-});
+    return view('pages.home');
+})->name('home');
+
 
 // Route::get('/', function () {
 //     return redirect()->route('login');
@@ -38,3 +40,4 @@ Route::post('/login', [LoginController::class, 'authenticate'])->name('authentic
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::resource('/profile', ProfileController::class)->only(['index', 'show', 'edit']);
 Route::resource('/produk', ProdukController::class)->only(['index', 'show', 'edit']);
+Route::resource('/cart', CartController::class)->only(['index', 'show', 'edit']);
