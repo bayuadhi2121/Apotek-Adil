@@ -7,7 +7,6 @@
             <div class="card mb-4">
                 <div class="card-header pb-0">
                     <h6>Authors table</h6>
-                    <a href="" class="btn btn-primary">Tambah Produk</a>
                 </div>
 
                 <div class="card-body px-0 pt-0 pb-2">
@@ -42,9 +41,7 @@
                                             <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3"
                                                 alt="user1">
                                         </div>
-
                                     </td>
-
                                     <td>
                                         <p class="text-xs font-weight-bold mb-0">TRX-12335</p>
                                     </td>
@@ -58,19 +55,18 @@
                                     <td class="align-middle text-center">
                                         <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
                                     </td>
-                                    <td class="align-middle">
-                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                    <td class="align-middle text-center">
+                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs "
                                             data-toggle="tooltip" data-original-title="Edit user">
-                                            Edit
+                                            Selesai
                                         </a>
-                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs px-2"
+                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs "
                                             data-toggle="tooltip" data-original-title="Edit user">
-                                            Delete
+                                            Tidak Di Ambil
                                         </a>
 
                                     </td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>

@@ -10,11 +10,15 @@
 <!-- Nucleo Icons -->
 <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet" />
 <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <!-- Font Awesome Icons -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-<link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
 <!-- CSS Files -->
 <link rel="stylesheet" href="{{ asset('css/soft-ui-dashboard.css') }}" />
-<!-- Nepcha Analytics (nepcha.com) -->
-<!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
-<script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+<!-- Text Editor -->
+<link rel="stylesheet" href="trumbowyg/dist/ui/trumbowyg.min.css">
