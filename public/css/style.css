@@ -362,3 +362,36 @@ a:hover {
 }
 
 }
+
+#toast{
+	background-color: E46A25;
+}
+
+/* btn detail transaksi */
+.btn-group button {
+	background-color: #1B7D53; /* background hijau */
+	border: 1px solid  #1B7D53;/* border hijau */
+	color: white; /* teks putih */
+	padding: 10px 24px; /* padding */
+	cursor: pointer; /* ikon Pointer/hand */
+	float: left; /* Letakkan tombol secara berdampingan */
+  }
+
+  
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+	content: "";
+	clear: both;
+	display:table;
+}  
+/* Mencegah border ganda */
+.btn-group button:not(:last-child){
+	border-right: none;
+}
+ 
+/* Tambahkan warna background */
+.btn-group button:hover {
+	background-color: #ffffff;
+	color:#1B7D53 ;
+
+  }

@@ -22,12 +22,12 @@ use App\Http\Controllers\TransaksiControllerAdmin;
 // Route::get('/', function () {
 //     return view('home');
 // });
-// Route::get('/', function () {
-//     return view('transaksi');
-// });
 Route::get('/', function () {
-    return view('admin.dashboard');
+    return view('RincianPesan');
 })->name('home');
+// Route::get('/', function () {
+//     return view('admin.dashboard');
+// })->name('home');
 
 
 // Route::get('/', function () {
