@@ -2,25 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\produk;
 use Illuminate\Http\Request;
+use Livewire\WithPagination;
 
 class ProdukController extends Controller
 {
+    use WithPagination;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.Produk');
+        $produk = produk::paginate(10);
+
+        return view('pages.Produk', compact('produk'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -33,9 +35,11 @@ class ProdukController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(produk $produk)
     {
-        //
+        return view('pages.Detail', [
+            'detail' => produk::find($produk->id)
+        ]);
     }
 
     /**

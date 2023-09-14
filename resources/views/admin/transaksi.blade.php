@@ -62,7 +62,7 @@
                                         </a>
                                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs "
                                             data-toggle="tooltip" data-original-title="Edit user">
-                                            Tidak Di Ambil
+                                            Tolak
                                         </a>
 
                                     </td>

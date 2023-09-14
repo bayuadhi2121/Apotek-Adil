@@ -5,6 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\KategoriControllerAdmin;
 use App\Http\Controllers\ProdukControllerAdmin;
 use App\Http\Controllers\TransaksiControllerAdmin;
 
@@ -23,19 +25,9 @@ use App\Http\Controllers\TransaksiControllerAdmin;
 //     return view('home');
 // });
 Route::get('/', function () {
-    return view('RincianPesan');
+    return view('pages.Home');
 })->name('home');
-// Route::get('/', function () {
-//     return view('admin.dashboard');
-// })->name('home');
 
-
-// Route::get('/', function () {
-//     return redirect()->route('login');
-// });
-
-//     return view('pages.home');
-// });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
@@ -43,8 +35,10 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::resource('/profile', ProfileController::class)->only(['index', 'show', 'edit']);
 Route::resource('/produk', ProdukController::class)->only(['index', 'show', 'edit']);
 Route::resource('/cart', CartController::class)->only(['index', 'show', 'edit']);
+Route::resource('/detail', DetailController::class)->only(['index', 'show', 'edit']);
 
 
 
-Route::resource('/adminProduk', ProdukControllerAdmin::class)->only(['index', 'show', 'edit']);
-Route::resource('/adminTransaksi', TransaksiControllerAdmin::class)->only(['index', 'show', 'edit']);
+Route::resource('/adminProduk', ProdukControllerAdmin::class);
+Route::resource('/adminTransaksi', TransaksiControllerAdmin::class)->only(['index', 'show', 'edit', 'store']);
+Route::resource('/adminKategori', KategoriControllerAdmin::class)->only(['index', 'show', 'edit', 'store']);

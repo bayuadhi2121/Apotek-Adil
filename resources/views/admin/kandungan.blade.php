@@ -118,11 +118,6 @@
                         <label for="productImage" class="form-label">Kandungan Utama</label>
                         <input class="form-control" rows="3" placeholder="Kandungan Utama Obat" name="kandungan">
                     </div>
-                    <button type="button" id="buatInputButton" onclick="buatInput()"
-                        class="btn btn-outline-success">Tambah Kandungan Lain</button>
-                    <div id="inputContainer" class=" mb-3">
-
-                    </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Kategori</label>
                         <input class="form-control" rows="3" placeholder="Kategori" name="kategori">
@@ -229,60 +224,4 @@
     </div>
 </div>
 
-@endsection
-
-@section('script')
-<script>
-    function setEdit(url,nama,deskripsi,kategori,harga,stok,kandungan,indikasi,aturanpakai,perhatian){
-    document.getElementById("form1").action = url;
-    document.getElementById("nama").value = nama;
-    document.getElementById("deskripsi").value = deskripsi;
-    document.getElementById("kategori").value = kategori;
-    document.getElementById("harga").value = harga;
-    document.getElementById("stok").value = stok;
-    document.getElementById("kandungan").value = kandungan; 
-    document.getElementById("indikasi").value = indikasi; 
-    document.getElementById("aturanpakai").value = aturanpakai; 
-    document.getElementById("perhatian").value = perhatian; 
-    // document.getElementById("foto").value = foto; 
-      
-    }
-</script>
-<script>
-    function resetFields() {
-  document.getElementById('nama').value = '';
-  document.getElementById("deskripsi").value = '';
-  document.getElementById('kategori').value = '';
-  document.getElementById('harga').value = '';
-  document.getElementById('stok').value = '';
-  document.getElementById('kandungan').value = '';
-  document.getElementById("indikasi").value = '';
-  document.getElementById("aturanpakai").value = '';
-  document.getElementById("perhatian").value = '';
-  document.getElementById("foto").value = '';
-  }
-</script>
-<script>
-    function buatInput() {
-            var inputContainer = document.getElementById('inputContainer');
-
-            var label = document.createElement('label');
-            label.for = 'lainnya'; // Sesuaikan dengan id input
-            label.className = 'form-label';
-            label.textContent = 'Kandungan Lainnya';
-            inputContainer.appendChild(label);
-
-            var input = document.createElement('input');
-            input.type = 'text';
-            input.className = 'form-control';
-            input.placeholder = 'Kandungan Lain Obat (bisa lebih dari 1 )';
-            input.name = 'lainnya';
-            input.id = 'lainnya'; // Sesuaikan dengan id input
-            inputContainer.appendChild(input);
-
-            var buatInputButton = document.getElementById('buatInputButton');
-            buatInputButton.disabled = true;
-            buatInputButton.style.display = 'none';
-        }
-</script>
 @endsection

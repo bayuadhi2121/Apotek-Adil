@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\produk;
+use App\Models\kategori;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
-class DetailController extends Controller
+class KategoriControllerAdmin extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
-
+    public function index()
+    {
+        return view('admin.kategori', [
+            'kategori' => kategori::Orderby('nama')->get()
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -19,13 +26,18 @@ class DetailController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required',
+        ]);
+        kategori::create($validatedData);
+
+        toast('Kategori Ditambah !', 'success');
+        return redirect()->back();
     }
 
     /**

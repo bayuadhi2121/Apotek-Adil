@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\produk;
+
 use Illuminate\Http\Request;
 
 class ProdukControllerAdmin extends Controller
@@ -11,15 +13,10 @@ class ProdukControllerAdmin extends Controller
      */
     public function index()
     {
-        return view('admin.produk');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        confirmDelete("test", "test");
+        return view('admin.produk', [
+            'produk' => produk::orderBy('kategori')->get()
+        ]);
     }
 
     /**
@@ -27,31 +24,57 @@ class ProdukControllerAdmin extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'deskripsi' => 'required',
+            'indikasi' => 'required',
+            'aturanpakai' => 'required',
+            'perhatian' => 'required',
+            'kategori' => 'required',
+            'harga' => 'required',
+            'stok' => 'required',
+            'kandungan' => 'required',
+            'foto' => 'nullable'
+        ]);
+        if ($request->hasFile('foto')) {
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+            $imageFile = $request->file('foto'); // Get the uploaded image file.
+            $imageName = $imageFile->getClientOriginalName(); // Get the original file name.
+            $imagePath = 'resep/' . $imageName; // Define the image path relative to the storage directory.
 
+            // Move the uploaded image to the 'storage/resep' directory.
+            $imageFile->storeAs('public/resep', $imageName);
+
+            // You can optionally store the image path in the validated data.
+            $validatedData['foto'] = $imagePath;
+        }
+        produk::create($validatedData);
+
+        toast('Produk Ditambah !', 'success');
+        return redirect()->back();
+    }
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'deskripsi' => 'required',
+            'indikasi' => 'required',
+            'aturanpakai' => 'required',
+            'perhatian' => 'required',
+            'kategori' => 'required',
+            'harga' => 'required',
+            'stok' => 'required',
+            'kandungan' => 'required',
+            'foto' => 'nullable'
+        ]);
+        produk::find($id)->update($validatedData);
+
+        toast('Produk Diupdate !', 'success');
+        return redirect()->back();
     }
 
     /**
@@ -59,6 +82,8 @@ class ProdukControllerAdmin extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        produk::destroy("id", $id);
+        toast('Produk Dihapus !', 'success');
+        return redirect()->back();
     }
 }
