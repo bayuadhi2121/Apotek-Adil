@@ -25,8 +25,8 @@
                         <div class="product-gallery">
                             <div class="product-gallery-preview ">
                                 <div class="product-gallery-preview-item card-border" id="first">
-                                    <img src="{{asset('image/detail1.png')}}" class="d-block mx-lg-auto img-fluid"
-                                        alt="Bootstrap Themes" loading="lazy" />
+                                    <img src="{{ asset('storage/' . $detail->foto) }}"
+                                        class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" loading="lazy" />
                                 </div>
                             </div>
                         </div>
@@ -55,66 +55,64 @@
                             </div>
 
 
-                            <form class="mb-grid-gutter" action="" method="POST">
-                                <div class="mb-3 d-flex align-items-center mt-4">
-                                    <input type="hidden" name="id" value="{{ $detail->id }}">
-                                    <input type="number" class=" form-control form-control-xs"
-                                        style="width: 5rem; margin-right: 1rem;" placeholder="Qty" min="1" name="qty"
-                                        required />
-                                    <button type="submit" onclick="see()" id="toast"
-                                        class="btn btn-primary btn-shadow d-block px-4 btn-custom"
-                                        style="margin-right: 1rem;"><i class="bi bi-cart2 me-2"
-                                            style="font-size: 18px;"></i></span>Add to cart</button>
-                                </div>
-                            </form>
-                            <div class="mb-3">
-                                <div class="mb-3 align-items-center mt-4">
-                                    <p>Kategori : <button
-                                            style="color:#E46A25; font-weight:600; font-family:'Poppins'; background:none;border: none;cursor: pointer;">{{$detail->kategori}}</button>
-                                    </p>
+                            <div class="mb-3 d-flex align-items-center mt-4">
+
+                                <input type="number" class=" form-control form-control-xs"
+                                    style="width: 5rem; margin-right: 1rem;" placeholder="Qty" min="1" name="qty"
+                                    required />
+                                <button type="submit" onclick="see()" id="toast"
+                                    class="btn btn-primary btn-shadow d-block px-4 btn-custom"
+                                    style="margin-right: 1rem;"><i class="bi bi-cart2 me-2"
+                                        style="font-size: 18px;"></i></span>Add to cart</button>
+
+                                <div class="mb-3">
+                                    <div class="mb-3 align-items-center mt-4">
+                                        <p>Kategori : <button
+                                                style="color:#E46A25; font-weight:600; font-family:'Poppins'; background:none;border: none;cursor: pointer;">{{$detail->kategori}}</button>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="btn-group" style="width: 100%" role="group" aria-label="Basic outlined example">
-            <button type="button" style="width: 100%">INFORMASI TAMBAHAN</button>
-        </div>
-        <!-- Description and others -->
-        <div class=" my-lg-3 py-1">
-            <div class="conten " id="reviews">
-                <div class="row pb-2 pt-3 grid gap-3">
-                    <div>
-                        <h4 class="border-bottom py-1" style="font-family: 'Poppins'">Indikasi</h4>
-                        <p class=" d-inline-block align-middle"
-                            style="font-family: 'Poppins',sans-serif;text-align:justify; text-justify:auto;">
-                            {{$detail->indikasi}}</p>
+            <div class="btn-group" style="width: 100%" role="group" aria-label="Basic outlined example">
+                <button type="button" style="width: 100%">INFORMASI TAMBAHAN</button>
+            </div>
+            <!-- Description and others -->
+            <div class=" my-lg-3 py-1">
+                <div class="conten " id="reviews">
+                    <div class="row pb-2 pt-3 grid gap-3">
+                        <div>
+                            <h4 class="border-bottom py-1" style="font-family: 'Poppins'">Indikasi</h4>
+                            <p class=" d-inline-block align-middle"
+                                style="font-family: 'Poppins',sans-serif;text-align:justify; text-justify:auto;">
+                                {{$detail->indikasi}}</p>
+                        </div>
+                        <div>
+                            <h4 class="border-bottom py-1" style="font-family: 'Poppins'">Komposisi</h4>
+                            <p class=" d-inline-block align-middle"
+                                style="font-family: 'Poppins',sans-serif;text-align:justify; text-justify:auto;">
+                                {{$detail->kandungan}}</p>
+                        </div>
+                        <div>
+                            <h4 class="border-bottom py-1" style="font-family: 'Poppins'">Aturan Pakai</h4>
+                            <p class=" d-inline-block align-middle"
+                                style="font-family: 'Poppins',sans-serif;text-align:justify; text-justify:auto;">
+                                {{$detail->aturanpakai}}</p>
+                        </div>
+                        <div>
+                            <h4 class="border-bottom py-1" style="font-family: 'Poppins'">Perhatian</h4>
+                            <p class=" d-inline-block align-middle"
+                                style="font-family: 'Poppins',sans-serif;text-align:justify; text-justify:auto;">
+                                {{$detail->perhatian}}</p>
+                        </div>
                     </div>
-                    <div>
-                        <h4 class="border-bottom py-1" style="font-family: 'Poppins'">Komposisi</h4>
-                        <p class=" d-inline-block align-middle"
-                            style="font-family: 'Poppins',sans-serif;text-align:justify; text-justify:auto;">
-                            {{$detail->kandungan}}</p>
-                    </div>
-                    <div>
-                        <h4 class="border-bottom py-1" style="font-family: 'Poppins'">Aturan Pakai</h4>
-                        <p class=" d-inline-block align-middle"
-                            style="font-family: 'Poppins',sans-serif;text-align:justify; text-justify:auto;">
-                            {{$detail->aturanpakai}}</p>
-                    </div>
-                    <div>
-                        <h4 class="border-bottom py-1" style="font-family: 'Poppins'">Perhatian</h4>
-                        <p class=" d-inline-block align-middle"
-                            style="font-family: 'Poppins',sans-serif;text-align:justify; text-justify:auto;">
-                            {{$detail->perhatian}}</p>
-                    </div>
-                </div>
 
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- Desc end -->
     <!-- another product start-->

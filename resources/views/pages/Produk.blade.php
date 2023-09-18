@@ -14,27 +14,29 @@
                             <h3 class="align-items-center rounded pb-2" style="font-family: 'Mulish', sans-serif">
                                 Category</h3>
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded"
-                                        style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">All
-                                        products</a></li>
-                                <li><a href="#" class="link-dark rounded"
-                                        style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Pharmacy</a>
-                                </li>
-                                <li><a href="#" class="link-dark rounded"
-                                        style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Personal
-                                        Care</a></li>
-                                <li><a href="#" class="link-dark rounded"
-                                        style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Family
-                                        Care</a></li>
-                                <li><a href="#" class="link-dark rounded"
-                                        style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Accesories</a>
-                                </li>
-                                <li><a href="#" class="link-dark rounded"
-                                        style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Fitness</a>
-                                </li>
-                                <li><a href="#" class="link-dark rounded"
-                                        style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Health
-                                        Devices</a></li>
+                                <form action="">
+                                    <li><a href="#" class="link-dark rounded"
+                                            style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">All
+                                            products</a></li>
+                                    <li><a href="#" class="link-dark rounded"
+                                            style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Pharmacy</a>
+                                    </li>
+                                    <li><a href="#" class="link-dark rounded"
+                                            style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Personal
+                                            Care</a></li>
+                                    <li><a href="#" class="link-dark rounded"
+                                            style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Family
+                                            Care</a></li>
+                                    <li><a href="#" class="link-dark rounded"
+                                            style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Accesories</a>
+                                    </li>
+                                    <li><a href="#" class="link-dark rounded"
+                                            style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Fitness</a>
+                                    </li>
+                                    <li><a href="#" class="link-dark rounded"
+                                            style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Health
+                                            Devices</a></li>
+                                </form>
                             </ul>
                         </li>
 
@@ -46,14 +48,7 @@
                     <h3 class="text-md-start border-bottom py-2"
                         style="font-size: 24px; font-family: 'Poppins', sans-serif; font-weight: 500">
                         All Products</h3>
-                    <div class="dropdown">
 
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">New Arrival</a></li>
-                            <li><a class="dropdown-item" href="#">Highest Price - Lower Price</a></li>
-                            <li><a class="dropdown-item" href="#">Lower Price - Highest Price</a></li>
-                        </ul>
-                    </div>
                 </div>
                 <!-- PRoducts -->
                 <div class="row">
@@ -80,9 +75,10 @@
                                     @currency($item->harga)
                                 </p>
 
-                                <button class="shop btn btn-primary mt-3" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Add to cart" type="submit"><i class="bi bi-cart3"
-                                        style="font-size: 17px;"></i></button>
+                                <a class="shop btn btn-primary mt-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title=" Add to cart"
+                                    href="{{ route('produk.edit', ['produk' => $item->id,'qty'=>'']) }}"><i
+                                        class="bi bi-cart3" style="font-size: 17px;"></i></a>
 
                                 <a type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="View details"
                                     href="{{ route('produk.show', ['produk' => $item->id]) }}"

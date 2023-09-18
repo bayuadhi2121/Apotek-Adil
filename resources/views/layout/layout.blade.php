@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     @include('includes.header')
     <div class="main">
         @yield('content')

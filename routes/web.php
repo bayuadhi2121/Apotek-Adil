@@ -34,7 +34,7 @@ Route::post('/login', [LoginController::class, 'authenticate'])->name('authentic
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::resource('/profile', ProfileController::class)->only(['index', 'show', 'edit']);
 Route::resource('/produk', ProdukController::class)->only(['index', 'show', 'edit']);
-Route::resource('/cart', CartController::class)->only(['index', 'show', 'edit']);
+Route::resource('/cart', CartController::class)->only(['index', 'show', 'edit', 'create']);
 Route::resource('/detail', DetailController::class)->only(['index', 'show', 'edit']);
 
 

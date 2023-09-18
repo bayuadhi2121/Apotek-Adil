@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cart;
 use App\Models\produk;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
@@ -45,9 +46,22 @@ class ProdukController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id, string $qty)
     {
-        //
+        $cartItem = Cart::where('id_produk', $id)->first();
+
+        if ($cartItem) {
+
+            $qty = $cartItem->qty + 1;
+            $cartItem->update(['qty' => $qty]);
+        } else {
+            Cart::create([
+                'id_produk' => $id,
+                'qty' => 1,
+            ]);
+        }
+        toast('Produk Ditambah Ke Keranjang !', 'success');
+        return redirect()->back();
     }
 
     /**
@@ -55,7 +69,6 @@ class ProdukController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**
