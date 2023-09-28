@@ -12,7 +12,7 @@
             </p>
             <div class="button-container">
 
-                <a class=" btn btn-labeled btn-primary cari" href="">Resep</a>
+                <a class=" btn btn-labeled btn-primary cari" href="{{ route('produk.index') }}">Obat</a>
                 <a class="btn btn-outline-primary resep" href="">
                     Upload Resep
                 </a>
@@ -159,7 +159,8 @@
             <div class="p-lg-5 d-flex justify-content-center align-items-center flex-column">
                 <h1 class="text-white konsul">Ingin Konsultasi Dengan Apoteker?</h1>
                 <div class="col-5 justify-center div-wa pt-4">
-                    <a class="btn btn-labeled btn-primary btn-wa" style="background-color: white;">Klik Via WhatsApp</a>
+                    <a href="https://wa.me/6287798188955" class="btn btn-labeled btn-primary btn-wa"
+                        style="background-color: white;">Klik Via WhatsApp</a>
                 </div>
 
             </div>

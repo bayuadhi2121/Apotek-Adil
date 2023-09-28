@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\cart;
+use App\Models\kategori;
 use App\Models\produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Livewire\WithPagination;
 
 class ProdukController extends Controller
@@ -13,11 +15,21 @@ class ProdukController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $produk = produk::paginate(10);
 
-        return view('pages.Produk', compact('produk'));
+        $search = $request->search;
+        $category = $request->input('category'); // Get the 'category' query parameter
+        if ($category != null) {
+            $id = kategori::where('nama', $category)->first();
+            $produk = produk::where('id_kategori', $id->id)->paginate(10);
+        } else {
+            $produk = produk::where('nama', 'LIKE', '%' . $search . '%')->paginate(10);
+        }
+        // Query the database to get products based on the selected category
+
+
+        return view('pages.Produk', compact('produk', 'category'));
     }
 
     /**
@@ -30,38 +42,39 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(produk $produk)
-    {
-        return view('pages.Detail', [
-            'detail' => produk::find($produk->id)
-        ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id, string $qty)
-    {
-        $cartItem = Cart::where('id_produk', $id)->first();
+        if (!Auth::check()) {
+            return back();
+        }
+        $cartItem = Cart::where('id_produk', $request->id)->first();
 
         if ($cartItem) {
-
-            $qty = $cartItem->qty + 1;
-            $cartItem->update(['qty' => $qty]);
+            $cartItem->update(['qty' => $cartItem->qty + 1]);
         } else {
             Cart::create([
-                'id_produk' => $id,
+                'id_user' => auth()->user()->id,
+                'id_produk' => $request->id,
                 'qty' => 1,
             ]);
         }
         toast('Produk Ditambah Ke Keranjang !', 'success');
         return redirect()->back();
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show($slug)
+    {
+        $detail = produk::where('slug', $slug)->firstOrFail();
+
+        return view('pages.Detail', ['detail' => $detail]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
     }
 
     /**

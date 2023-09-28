@@ -21,4 +21,8 @@ class cart extends Model
             $model->id = IdGenerator::generate(['table' => 'carts', 'field' => 'id', 'length' => 20, 'prefix' => 'CRT-' . date('ym'), 'reset_on_prefix_change' => true]);
         });
     }
+    public function produk()
+    {
+        return $this->belongsTo(produk::class, 'id_produk');
+    }
 }

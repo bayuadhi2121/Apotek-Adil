@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kategori;
 use App\Models\produk;
+use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 
@@ -15,7 +17,8 @@ class ProdukControllerAdmin extends Controller
     {
         confirmDelete("test", "test");
         return view('admin.produk', [
-            'produk' => produk::orderBy('kategori')->get()
+            'produk' => produk::orderBy('id_kategori')->latest()->get(),
+            'kategori' => kategori::all()
         ]);
     }
 
@@ -31,12 +34,23 @@ class ProdukControllerAdmin extends Controller
             'indikasi' => 'required',
             'aturanpakai' => 'required',
             'perhatian' => 'required',
-            'kategori' => 'required',
+            'id_kategori' => 'required',
             'harga' => 'required',
             'stok' => 'required',
             'kandungan' => 'required',
             'foto' => 'nullable'
         ]);
+        $slug = Str::slug($validatedData['nama']);
+
+        // Check if the generated slug already exists.
+        $count = produk::where('slug', $slug)->count();
+        if ($count > 0) {
+            // Append a number to the slug to make it unique.
+            $slug = $slug . '-' . ($count + 1);
+        }
+
+        // Add the slug to the validated data.
+        $validatedData['slug'] = $slug;
         if ($request->hasFile('foto')) {
 
             $imageFile = $request->file('foto'); // Get the uploaded image file.
@@ -65,12 +79,13 @@ class ProdukControllerAdmin extends Controller
             'indikasi' => 'required',
             'aturanpakai' => 'required',
             'perhatian' => 'required',
-            'kategori' => 'required',
+            'id_kategori' => 'required',
             'harga' => 'required',
             'stok' => 'required',
             'kandungan' => 'required',
             'foto' => 'nullable'
         ]);
+        // $validatedData['kategori'] =  $request->kategori->nama;
         produk::find($id)->update($validatedData);
 
         toast('Produk Diupdate !', 'success');

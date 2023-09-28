@@ -46,9 +46,7 @@
                                     </td>
                                     <td>
                                         <p class="text-xs font-weight-bold mb-0">{{
-                                            $item->kategori}}</p>
-                                        {{-- <p class="text-xs font-weight-bold mb-0">{!!
-                                            html_entity_decode($item->deskripsi)!!}</p> --}}
+                                            $item->kategori->nama}}</p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs font-weight-bold mb-0">{{ $item->harga }}</p>
@@ -59,7 +57,7 @@
                                     <td class="align-middle">
                                         <a class="text-secondary font-weight-bold text-xs" data-bs-toggle="modal"
                                             href="" data-bs-target="#exampleModaledit" data-toggle="tooltip"
-                                            onclick="setEdit('{{ route('adminProduk.update', ['adminProduk' => $item->id]) }}', '{{ $item->nama }}', '{{ $item->deskripsi }}', '{{ $item->kategori }}', '{{ $item->harga }}', '{{ $item->stok }}', '{{ $item->kandungan }}', '{{ $item->indikasi }}', '{{ $item->aturanpakai }}', '{{ $item->perhatian }}')">
+                                            onclick="setEdit('{{ route('adminProduk.update', ['adminProduk' => $item->id]) }}', '{{ $item->nama }}', '{{ $item->deskripsi }}', '{{ $item->kategori->id }}', '{{ $item->harga }}', '{{ $item->stok }}', '{{ $item->kandungan }}', '{{ $item->indikasi }}', '{{ $item->aturanpakai }}', '{{ $item->perhatian }}')">
                                             Edit
                                         </a>
                                         <a class="text-secondary font-weight-bold text-xs px-2"
@@ -118,14 +116,17 @@
                         <label for="productImage" class="form-label">Kandungan Utama</label>
                         <input class="form-control" rows="3" placeholder="Kandungan Utama Obat" name="kandungan">
                     </div>
-                    <button type="button" id="buatInputButton" onclick="buatInput()"
-                        class="btn btn-outline-success">Tambah Kandungan Lain</button>
-                    <div id="inputContainer" class=" mb-3">
 
-                    </div>
+
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Kategori</label>
-                        <input class="form-control" rows="3" placeholder="Kategori" name="kategori">
+                        <select class="form-control" name="id_kategori">
+                            <option selected>Open this select menu</option>
+                            @foreach($kategori as $category)
+
+                            <option value="{{ $category->id }}">{{ $category->nama }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Harga</label>
@@ -197,7 +198,13 @@
                     </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Kategori</label>
-                        <input class="form-control" id="kategori" rows="3" placeholder="Kategori" name="kategori">
+                        <select class="form-control" name="id_kategori" id="id_kategori">
+                            <option selected value="">Open this select menu</option>
+                            @foreach($kategori as $category)
+
+                            <option value="{{ $category->id }}">{{ $category->nama }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Harga</label>
@@ -237,7 +244,7 @@
     document.getElementById("form1").action = url;
     document.getElementById("nama").value = nama;
     document.getElementById("deskripsi").value = deskripsi;
-    document.getElementById("kategori").value = kategori;
+    document.getElementById("id_kategori").value = kategori;
     document.getElementById("harga").value = harga;
     document.getElementById("stok").value = stok;
     document.getElementById("kandungan").value = kandungan; 
@@ -245,7 +252,16 @@
     document.getElementById("aturanpakai").value = aturanpakai; 
     document.getElementById("perhatian").value = perhatian; 
     // document.getElementById("foto").value = foto; 
-      
+// console.log(kategori);
+   const idKategoriSelect = document.getElementById("id_kategori");
+
+        // Loop through options to find and select the matching one
+        for (let i = 0; i < idKategoriSelect.options.length; i++) {
+            if (idKategoriSelect.options[i].value === id_kategori) {
+                idKategoriSelect.options[i].selected = true;
+                break; // Exit the loop once a match is found
+            }
+        }
     }
 </script>
 <script>
@@ -262,27 +278,5 @@
   document.getElementById("foto").value = '';
   }
 </script>
-<script>
-    function buatInput() {
-            var inputContainer = document.getElementById('inputContainer');
 
-            var label = document.createElement('label');
-            label.for = 'lainnya'; // Sesuaikan dengan id input
-            label.className = 'form-label';
-            label.textContent = 'Kandungan Lainnya';
-            inputContainer.appendChild(label);
-
-            var input = document.createElement('input');
-            input.type = 'text';
-            input.className = 'form-control';
-            input.placeholder = 'Kandungan Lain Obat (bisa lebih dari 1 )';
-            input.name = 'lainnya';
-            input.id = 'lainnya'; // Sesuaikan dengan id input
-            inputContainer.appendChild(input);
-
-            var buatInputButton = document.getElementById('buatInputButton');
-            buatInputButton.disabled = true;
-            buatInputButton.style.display = 'none';
-        }
-</script>
 @endsection

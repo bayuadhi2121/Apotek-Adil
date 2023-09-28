@@ -13,17 +13,20 @@ return new class extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->String('id')->primary();
-            $table->String('nama');
+            $table->string('nama');
             $table->longText('deskripsi');
             $table->longText('indikasi');
             $table->longText('aturanpakai');
             $table->longText('perhatian');
-            $table->String('kategori');
+            $table->string('id_kategori', 50);
             $table->integer('harga');
             $table->integer('stok');
-            $table->String('kandungan');
-            $table->String('foto')->nullable();
+            $table->string('kandungan');
+            $table->string('foto')->nullable();
             $table->timestamps();
+            $table->string('slug')->unique();
+
+            $table->foreign('id_kategori')->references('id')->on('kategoris');
         });
     }
 

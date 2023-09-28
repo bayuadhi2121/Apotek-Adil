@@ -13,12 +13,8 @@ class kategori extends Model
     protected $primaryKey = 'id';
 
     public $incrementing = false;
-
-    public static function boot()
+    public function produk()
     {
-        parent::boot();
-        self::creating(function ($model) {
-            $model->id = IdGenerator::generate(['table' => 'kategoris', 'field' => 'id', 'length' => 20, 'prefix' => 'KTGR-' . date('ym'), 'reset_on_prefix_change' => true]);
-        });
+        return $this->hasOne(Produk::class, 'id_kategori');
     }
 }

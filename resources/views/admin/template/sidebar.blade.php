@@ -64,7 +64,7 @@
                     <span class="nav-link-text ms-1">Produk</span>
                 </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link  " href="{{ route('adminKategori.index') }}" data-nav="#produk">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -89,7 +89,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Kategori</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link  " href="{{ route('adminTransaksi.index') }}" data-nav="#transaksi">
                     <div

@@ -54,30 +54,33 @@
                                     {{ $detail->deskripsi }}</p>
                             </div>
 
-
-                            <div class="mb-3 d-flex align-items-center mt-4">
-
-                                <input type="number" class=" form-control form-control-xs"
-                                    style="width: 5rem; margin-right: 1rem;" placeholder="Qty" min="1" name="qty"
-                                    required />
-                                <button type="submit" onclick="see()" id="toast"
-                                    class="btn btn-primary btn-shadow d-block px-4 btn-custom"
-                                    style="margin-right: 1rem;"><i class="bi bi-cart2 me-2"
-                                        style="font-size: 18px;"></i></span>Add to cart</button>
-
-                                <div class="mb-3">
-                                    <div class="mb-3 align-items-center mt-4">
-                                        <p>Kategori : <button
-                                                style="color:#E46A25; font-weight:600; font-family:'Poppins'; background:none;border: none;cursor: pointer;">{{$detail->kategori}}</button>
-                                        </p>
-                                    </div>
+                            <form action="{{ route('detail.store', ['produk'=>$detail]) }}" method="POST">
+                                @csrf
+                                <div class="mb-3 d-flex align-items-center mt-4">
+                                    @if(!Auth::user()->is_admin)
+                                    <input type="number" class=" form-control form-control-xs"
+                                        style="width: 5rem; margin-right: 1rem;" placeholder="Qty" min="1" name="qty"
+                                        required />
+                                    <button type="submit" onclick="see()" id="toast"
+                                        class="btn btn-primary btn-shadow d-block px-4 btn-custom"
+                                        style="margin-right: 1rem;"><i class="bi bi-cart2 me-2"
+                                            style="font-size: 18px;"></i></span>Add to cart</button>
+                                    @endif
+                                </div>
+                            </form>
+                            <div class="mb-3">
+                                <div class="mb-3 align-items-center mt-4">
+                                    <p>Kategori : <a
+                                            href="{{ route('produk.index', ['category' => $detail->kategori->nama]) }}"
+                                            style="color:#E46A25; font-weight:600; font-family:'Poppins'; background:none;border: none;cursor: pointer;">{{$detail->kategori->nama}}</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="btn-group" style="width: 100%" role="group" aria-label="Basic outlined example">
+            <div class="btn-group mt-3" style="width: 100%" role="group" aria-label="Basic outlined example">
                 <button type="button" style="width: 100%">INFORMASI TAMBAHAN</button>
             </div>
             <!-- Description and others -->

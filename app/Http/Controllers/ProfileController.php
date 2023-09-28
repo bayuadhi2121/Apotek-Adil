@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\user;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -51,7 +52,14 @@ class ProfileController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $credentials = $request->validate([
+            'nama' => ['required'],
+            'alamat' => ['required'],
+            'hp' => ['required', 'numeric'],
+        ]);
+        user::find($id)->update($credentials);
+        toast('Profil Berhasil Di Perbaharui', 'success');
+        return redirect()->back();
     }
 
     /**

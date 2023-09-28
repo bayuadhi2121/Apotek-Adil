@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cart;
 use App\Models\produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DetailController extends Controller
 {
@@ -25,7 +27,22 @@ class DetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (!Auth::check()) {
+            return back();
+        }
+        $cart = cart::where('id_produk', $request->produk)->first();
+        if ($cart) {
+            $cart->update([
+                'qty' => $cart->qty + $request->qty
+            ]);
+        } else {
+            cart::create([
+                'id_produk' => $request->produk,
+                'qty' => $request->qty
+            ]);
+        }
+        toast('Produk Ditambah Ke Keranjang !', 'success');
+        return redirect()->back();
     }
 
     /**

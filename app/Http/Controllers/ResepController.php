@@ -2,40 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cart;
-use App\Models\produk;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class CartController extends Controller
+class ResepController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function __construct()
-    {
-        $this->middleware('auth'); // Example middleware applied to all methods in the controller
-    }
-
-
     public function index()
     {
-
-        return view('Pages.Cart', [
-            'cart' => cart::where('id_user', auth()->user()->id)->get()
-        ]);
+        //
     }
 
     /**
      * Show the form for creating a new resource.
      */
-
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**

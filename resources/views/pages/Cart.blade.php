@@ -12,70 +12,45 @@
         <div class="row g-3 g-lg-1">
             <!-- barang -->
             <div class="col">
-                <div class="bg-white cart-item-list p-2 mb-1">
+                @foreach ($cart as $item)
+                <div class="bg-white cart-item-list p-2 mb-1 d-flex">
 
                     <div class="cart-item pb-2">
-                        <a href="#" class="cart-item-image mt-3"><img src="" alt="image" /></a>
-                        <div class="cart-item-body">
-                            <div class="row">
-                                <div class="col-10">
-                                    <div class="row">
-                                        <div class="col-md-6 mt-3">
-                                            <h5 class="cart-item-tittle pt-3">dwdwdw</h5>
-                                            <small class="cart-item-subtittle">dwdw</small>
-                                            <ul class="cart-item-meta">
-                                                <li style="color: #3682f4">Rp 1000</li><br />
-                                                <input type="number" class="form-control form-control-xs mt-3"
-                                                    style="width: 112px;" value="" min="1" readonly />
-                                            </ul>
-                                        </div>
-                                    </div>
+                        {{-- <div class="row justify-content-between"> --}}
+                            <img class="col-4" style="" src="{{ asset('storage/'.$item->produk->foto ) }}"
+                                alt="image" />
+
+                            {{-- <div class=""> --}}
+                                <div class="col-md-3 mt-3 ms-4">
+                                    <h5 class="cart-item-tittle pt-3">{{ $item->produk->nama }}</h5>
+                                    <small class="cart-item-subtittle" style="color:#E46A25 ">{{
+                                        $item->produk->kategori->nama
+                                        }}</small>
+                                    <p style="color: #3682f4">Rp 1000</p>
+                                    <input type="number" class="form-control form-control-xs mt-3" style="width: 112px;"
+                                        value="{{ $item->qty }}" min="1" readonly />
+
                                 </div>
                                 <div class="col-2 text-end mt-3">
                                     <div class="cart-item-options">
                                         <form action="" method="POST">
                                             <input type="hidden" name="qty1" value="">
-                                            <button type="submit" class="btn-close" data-bs-toggle="tooltip"
-                                                data-bs-placement="top" title="Remove item" onclick=""></button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white cart-item-list p-2 mb-1">
 
-                    <div class="cart-item pb-2">
-                        <a href="#" class="cart-item-image mt-3"><img src="" alt="image" /></a>
-                        <div class="cart-item-body">
-                            <div class="row">
-                                <div class="col-10">
-                                    <div class="row">
-                                        <div class="col-md-6 mt-3">
-                                            <h5 class="cart-item-tittle pt-3">dwdwdw</h5>
-                                            <small class="cart-item-subtittle">dwdw</small>
-                                            <ul class="cart-item-meta">
-                                                <li style="color: #3682f4">Rp 1000</li><br />
-                                                <input type="number" class="form-control form-control-xs mt-3"
-                                                    style="width: 112px;" value="" min="1" readonly />
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 text-end mt-3">
-                                    <div class="cart-item-options">
-                                        <form action="" method="POST">
-                                            <input type="hidden" name="qty1" value="">
                                             <button type="submit" class="btn-close" data-bs-toggle="tooltip"
                                                 data-bs-placement="top" title="Remove item" onclick=""></button>
                                         </form>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                {{--
+                            </div> --}}
+
+
+                            {{--
+                        </div> --}}
                     </div>
+
                 </div>
+                @endforeach
             </div>
             <aside class="col-lg-4">
                 <div class="bg-white">
@@ -101,24 +76,7 @@
                     </ul>
             </aside>
         </div>
-        <div class="col-12 col-md-7">
-            <!-- kupon -->
-            <form class="mb-7 mb-md-0">
-                <label class="fw-regular mb-3" style="font-size: 18px; font-family: 'Poppins', sans-serif;
-            font-weight: 500;" for="carCouponCode">
-                    Promo code :
-                </label>
-                <div class="row form-row">
-                    <div class="col">
-                        <input class="form-control form-control-sm rounded-0" id="cartCouponCode" type="text"
-                            placeholder="Enter promo code">
-                    </div>
-                    <div class="col-auto">
-                        <button class="btn btn-sm btn-primary" type="submit">Apply</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+
     </div>
     </div>
 </section>
