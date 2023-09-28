@@ -7,6 +7,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\KategoriControllerAdmin;
 use App\Http\Controllers\ProdukControllerAdmin;
+use App\Http\Controllers\ResepController;
 use App\Http\Controllers\TransaksiControllerAdmin;
 use App\Http\Controllers\UserController;
 
@@ -43,5 +44,6 @@ Route::group(['middleware' => ['admin']], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     Route::resource('/cart', CartController::class)->only(['index', 'show', 'edit', 'create']);
+    Route::resource('/resep', ResepController::class)->only(['index', 'show', 'edit', 'create']);
     Route::resource('/profile', ProfileController::class)->only(['update']);
 });

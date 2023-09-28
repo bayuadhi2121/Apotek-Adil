@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light navanimate py-4">
     <div class="container">
-        <a class="navbar-brand" href="#"> <img src="" alt="" width="115" height="40" /> </a>
+        <a class="navbar-brand" href="#"> <img src="{{ asset('image/logo.png') }}" alt="" width="60" height="50" />
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
             aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -12,7 +13,7 @@
                     <a class="nav-link active" aria-current="page" href="{{route('home')}}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Resep</a>
+                    <a class="nav-link" href="{{ route('resep.index') }}">Resep</a>
                 </li>
 
                 <li class="nav-item">
