@@ -31,7 +31,7 @@
         <div class="row row-cols-2 gap-4">
             <div class="cardtrx py-3 col-md-5 col-12 ">
                 <div class="d-flex justify-content-between ">
-                    <div class="">
+                    <div class="align-items-ce">
                         <span class="">Card title</span>
                     </div>
                     <div class="statustrx align-items-center px-lg-3 py-lg-1 px-sm-3 py-sm-1">
