@@ -12,10 +12,19 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('home')}}">Beranda</a>
                 </li>
+                @if(Auth::check())
+                @if(Auth::user()->is_admin)
+
+                @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('resep.index') }}">Resep</a>
                 </li>
-
+                @endif
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('resep.index') }}">Resep</a>
+                </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('produk.index')}}">Produk</a>
                 </li>
@@ -30,11 +39,18 @@
                         name="search">
                     <!-- <input type="submit" hidden /> -->
                 </form>
-
-                <a class="btn btn-outline-primary" href="{{ route('cart.index') }}">
+                @if(Auth::check())
+                @if(Auth::user()->is_admin)
+                @else
+                <a class="btn btn-outline-primary pt-4 pt-sm-0" href="{{ route('cart.index') }}">
                     <i class="fa-solid fa-cart-shopping pe-2 " style="font-size: 17px; "></i>Cart
                 </a>
-
+                @endif
+                @else
+                <a class="btn btn-outline-primary pt-4 pt-sm-2" pt-sm-3 href="{{ route('cart.index') }}">
+                    <i class="fa-solid fa-cart-shopping pe-2 " style="font-size: 17px; "></i>Cart
+                </a>
+                @endif
 
                 @if(Auth::check())
                 @if(Auth::user()->is_admin)
@@ -50,7 +66,6 @@
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                         <li><a class="dropdown-item" href="{{route('profile.index')}}">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Daftar Transaksi</a></li>
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
@@ -62,11 +77,11 @@
                                 </form>
                             </div>
                         </li>
-                        < </ul>
+                    </ul>
                 </div>
                 @endif
                 @else
-                <a href=" {{ route('login.index') }}" class=" btn btn-labeled btn-primary mx-2" href=""><i
+                <a href=" {{ route('login.index') }}" class=" btn btn-labeled btn-primary mx-2 mt-3 mt-sm-0" href=""><i
                         class="fa-solid fa-user pe-2"></i> Login</a>
                 @endif
             </div>

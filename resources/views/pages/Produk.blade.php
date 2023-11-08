@@ -130,6 +130,9 @@
                 </div>
             </div>
         </div>
+        @if($produk)
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        @endif
     </div>
 </section>
 

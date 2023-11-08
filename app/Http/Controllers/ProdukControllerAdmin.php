@@ -55,10 +55,10 @@ class ProdukControllerAdmin extends Controller
 
             $imageFile = $request->file('foto'); // Get the uploaded image file.
             $imageName = $imageFile->getClientOriginalName(); // Get the original file name.
-            $imagePath = 'resep/' . $imageName; // Define the image path relative to the storage directory.
+            $imagePath = 'produk/' . $imageName; // Define the image path relative to the storage directory.
 
             // Move the uploaded image to the 'storage/resep' directory.
-            $imageFile->storeAs('public/resep', $imageName);
+            $imageFile->storeAs('public/produk', $imageName);
 
             // You can optionally store the image path in the validated data.
             $validatedData['foto'] = $imagePath;

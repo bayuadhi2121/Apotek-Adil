@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Resep;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class ResepController extends Controller
+class ResepControllerAdmin extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.Resep', [
-            'resep' => Resep::where('id_user', auth()->user()->id)->get()
+        return view('admin.resep', [
+            'resep' => Resep::orderBy('created_at')->paginate(10)
         ]);
     }
 
@@ -23,6 +23,7 @@ class ResepController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -30,25 +31,7 @@ class ResepController extends Controller
      */
     public function store(Request $request)
     {
-        $credentials = $request->validate([
-            'foto' => 'required|mimes:jpg,jpeg,png',
-
-        ]);
-
-
-        $imageFile = $request->file('foto'); // Get the uploaded image file.
-        $imageName = $imageFile->getClientOriginalName(); // Get the original file name.
-        $imagePath = 'resep/' . $imageName; // Define the image path relative to the storage directory.
-
-        // Move the uploaded image to the 'storage/resep' directory.
-        $imageFile->storeAs('public/resep', $imageName);
-
-        // You can optionally store the image path in the validated data.
-        $credentials['foto'] = $imagePath;
-
-
-        $credentials['id_user'] = Auth::user()->id;
-        Resep::create($credentials);
+        //
     }
 
     /**
@@ -72,7 +55,16 @@ class ResepController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'catatan' => 'required',
+            'pilih' => 'required'
+        ]);
+        Resep::where('id', $id)->update([
+            'catatan' => $request->catatan,
+            'status' => $request->pilih
+        ]);
+        toast('Resep Telah ' . $request->pilih, 'success');
+        return back();
     }
 
     /**
@@ -80,6 +72,8 @@ class ResepController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        confirmDelete('Ingin Menghapus ?');
+        Resep::find($id)->delete();
+        return back();
     }
 }

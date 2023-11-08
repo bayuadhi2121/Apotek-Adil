@@ -64,8 +64,8 @@
                     <span class="nav-link-text ms-1">Produk</span>
                 </a>
             </li>
-            {{-- <li class="nav-item">
-                <a class="nav-link  " href="{{ route('adminKategori.index') }}" data-nav="#produk">
+            <li class="nav-item">
+                <a class="nav-link  " href="{{ route('adminResep.index') }}" data-nav="#produk">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
@@ -87,9 +87,9 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Kategori</span>
+                    <span class="nav-link-text ms-1">Resep</span>
                 </a>
-            </li> --}}
+            </li>
             <li class="nav-item">
                 <a class="nav-link  " href="{{ route('adminTransaksi.index') }}" data-nav="#transaksi">
                     <div

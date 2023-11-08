@@ -22,9 +22,9 @@ class ProdukController extends Controller
         $category = $request->input('category'); // Get the 'category' query parameter
         if ($category != null) {
             $id = kategori::where('nama', $category)->first();
-            $produk = produk::where('id_kategori', $id->id)->paginate(10);
+            $produk = produk::where('id_kategori', $id->id)->where('stok', '>', 0)->paginate(10);
         } else {
-            $produk = produk::where('nama', 'LIKE', '%' . $search . '%')->paginate(10);
+            $produk = produk::where('nama', 'LIKE', '%' . $search . '%')->where('stok', '>', 0)->paginate(10);
         }
         // Query the database to get products based on the selected category
 

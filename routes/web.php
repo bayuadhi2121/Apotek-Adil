@@ -5,9 +5,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\DetailControllerAdmin;
 use App\Http\Controllers\KategoriControllerAdmin;
 use App\Http\Controllers\ProdukControllerAdmin;
 use App\Http\Controllers\ResepController;
+use App\Http\Controllers\ResepControllerAdmin;
 use App\Http\Controllers\TransaksiControllerAdmin;
 use App\Http\Controllers\UserController;
 
@@ -40,10 +42,12 @@ Route::group(['middleware' => ['admin']], function () {
     Route::resource('/adminProduk', ProdukControllerAdmin::class);
     Route::resource('/adminTransaksi', TransaksiControllerAdmin::class)->only(['index', 'show', 'edit', 'store']);
     Route::resource('/adminKategori', KategoriControllerAdmin::class)->only(['index', 'show', 'edit', 'store']);
+    Route::resource('/adminResep', ResepControllerAdmin::class)->only(['index', 'show', 'update', 'store', 'destroy']);
+    Route::resource('/adminDetail', DetailControllerAdmin::class)->only(['edit']);
 });
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-    Route::resource('/cart', CartController::class)->only(['index', 'show', 'edit', 'create']);
-    Route::resource('/resep', ResepController::class)->only(['index', 'show', 'edit', 'create']);
-    Route::resource('/profile', ProfileController::class)->only(['update']);
+    Route::resource('/cart', CartController::class)->only(['index', 'show', 'edit', 'store', 'destroy']);
+    Route::resource('/resep', ResepController::class)->only(['index', 'show', 'edit', 'store']);
+    Route::resource('/profile', ProfileController::class)->only(['update', 'index']);
 });

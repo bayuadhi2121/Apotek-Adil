@@ -15,29 +15,43 @@
                         <label class="form-label" for="form3Example3">Nama Lengkap</label>
                         <input type="text" id="form3Example3" class="form-control " name="nama"
                             placeholder="Masukkan Nama Lengkap Anda" />
-
+                        @error('nama')
+                        <span class="error text-sm text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example3">Username</label>
                         <input type="text" id="form3Example3" name="username" class="form-control"
                             placeholder="Masukkan Username" />
+                        @error('username')
+                        <span class="error text-sm text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
+
                     <div class="form-outline mb-2">
                         <label class="form-label" for="form3Example3">Alamat</label>
                         <input type="text" id="form3Example3" class="form-control " name="alamat"
                             placeholder="Masukkan Alamat Anda" />
-
+                        @error('alamat')
+                        <span class="error text-sm text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example3">No Telfon</label>
                         <input type="number" id="form3Example3" class="form-control " name="hp"
                             placeholder="Pastikan No telfon Aktif dan Benar" />
+                        @error('hp')
+                        <span class="error text-sm text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <!-- Password input -->
                     <div class="form-outline mb-3">
                         <label class="form-label" for="form3Example4">Password</label>
                         <input type="password" id="form3Example4" class="form-control" name="password"
                             placeholder="Enter password" />
+                        @error('password')
+                        <span class="error text-sm text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
 
 

@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\detail;
+use App\Http\Controllers\Controller;
 use App\Models\transaksi;
 use Illuminate\Http\Request;
-use Livewire\WithPagination;
 
-class TransaksiControllerAdmin extends Controller
+class DetailControllerAdmin extends Controller
 {
-    use WithPagination;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.transaksi', [
-            'transaksi' => transaksi::paginate(10),
-        ]);
+        //
     }
 
     /**
@@ -41,12 +37,7 @@ class TransaksiControllerAdmin extends Controller
      */
     public function show(string $id)
     {
-        $detail = detail::where('id_transaksi', $id)->get();
-        $nama = detail::where('id_transaksi', $id)->first();
-        return view('admin.detail', [
-            'detail' => $detail,
-            'nama' => $nama
-        ]);
+        //
     }
 
     /**
@@ -54,7 +45,12 @@ class TransaksiControllerAdmin extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $adminDetail = explode('!', $id);
+        transaksi::where('id', $adminDetail[0])->update([
+            'status' => $adminDetail[1]
+        ]);
+        toast('Transaksi Selesai !', 'success');
+        return back();
     }
 
     /**
@@ -62,7 +58,6 @@ class TransaksiControllerAdmin extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**

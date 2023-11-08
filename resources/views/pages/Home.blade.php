@@ -13,7 +13,7 @@
             <div class="button-container">
 
                 <a class=" btn btn-labeled btn-primary cari" href="{{ route('produk.index') }}">Obat</a>
-                <a class="btn btn-outline-primary resep" href="">
+                <a class="btn btn-outline-primary resep" href="{{ route('resep.index') }}">
                     Upload Resep
                 </a>
             </div>

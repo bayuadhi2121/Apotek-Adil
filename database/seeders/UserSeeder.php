@@ -16,14 +16,32 @@ class UserSeeder extends Seeder
     {
         // Define the data to be seeded
         $userData = [
+            // [
+            //     'id' => 'USR-001',
+            //     'nama' => 'Azzam',
+            //     'username' => 'Azzam2023',
+            //     'password' => bcrypt('azzamadmin'),
+            //     'alamat' => 'lotim',
+            //     'hp' => '1234567890', // Change this to an appropriate phone number
+            //     'is_admin' => 1
+            // ],
             [
                 'id' => 'USR-001',
                 'nama' => 'Azzam',
-                'username' => 'Azzam2023',
-                'password' => bcrypt('azzamadmin'),
+                'username' => 'a',
+                'password' => bcrypt('a'),
                 'alamat' => 'lotim',
                 'hp' => '1234567890', // Change this to an appropriate phone number
                 'is_admin' => 1
+            ],
+            [
+                'id' => 'USR-002',
+                'nama' => 'bay',
+                'username' => 'bay',
+                'password' => bcrypt('123'),
+                'alamat' => 'lotim',
+                'hp' => '1234567890', // Change this to an appropriate phone number
+                'is_admin' => 0
             ],
 
             // Add more users as needed

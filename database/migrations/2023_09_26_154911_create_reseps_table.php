@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reseps', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
+            $table->string('id_user');
+            $table->string('foto');
+            $table->string('catatan')->nullable();
+            $table->string('status')->default('Ditinjau');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();
         });
     }

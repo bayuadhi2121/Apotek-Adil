@@ -57,7 +57,28 @@
                             <form action="{{ route('detail.store', ['produk'=>$detail]) }}" method="POST">
                                 @csrf
                                 <div class="mb-3 d-flex align-items-center mt-4">
+                                    @if (!Auth::check())
+                                    @else
+                                    @endif
+                                    @if(Auth::check())
                                     @if(!Auth::user()->is_admin)
+                                    <input type="number" class=" form-control form-control-xs"
+                                        style="width: 5rem; margin-right: 1rem;" placeholder="Qty" min="1" name="qty"
+                                        required />
+                                    <button type="submit" onclick="see()" id="toast"
+                                        class="btn btn-primary btn-shadow d-block px-4 btn-custom"
+                                        style="margin-right: 1rem;"><i class="bi bi-cart2 me-2"
+                                            style="font-size: 18px;"></i></span>Add to cart</button>
+                                    @else
+                                    <input type="number" class=" form-control form-control-xs"
+                                        style="width: 5rem; margin-right: 1rem;" placeholder="Qty" min="1" name="qty"
+                                        required />
+                                    <button type="submit" onclick="see()" id="toast"
+                                        class="btn btn-primary btn-shadow d-block px-4 btn-custom"
+                                        style="margin-right: 1rem;"><i class="bi bi-cart2 me-2"
+                                            style="font-size: 18px;"></i></span>Add to cart</button>
+                                    @endif
+                                    @else
                                     <input type="number" class=" form-control form-control-xs"
                                         style="width: 5rem; margin-right: 1rem;" placeholder="Qty" min="1" name="qty"
                                         required />

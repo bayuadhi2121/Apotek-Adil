@@ -26,4 +26,8 @@ class user extends \Illuminate\Foundation\Auth\User
     {
         return $this->hasMany(cart::class, 'id');
     }
+    public function transaksi()
+    {
+        return $this->hasMany(transaksi::class, 'id_transaksi');
+    }
 }
