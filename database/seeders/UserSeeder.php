@@ -27,22 +27,22 @@ class UserSeeder extends Seeder
             // ],
             [
                 'id' => 'USR-001',
-                'nama' => 'Azzam',
-                'username' => 'a',
-                'password' => bcrypt('a'),
+                'nama' => 'azzamhayaza',
+                'username' => 'azzamhayaza',
+                'password' => bcrypt('Kimimaki1'),
                 'alamat' => 'lotim',
                 'hp' => '1234567890', // Change this to an appropriate phone number
                 'is_admin' => 1
             ],
-            [
-                'id' => 'USR-002',
-                'nama' => 'bay',
-                'username' => 'bay',
-                'password' => bcrypt('123'),
-                'alamat' => 'lotim',
-                'hp' => '1234567890', // Change this to an appropriate phone number
-                'is_admin' => 0
-            ],
+            // [
+            //     'id' => 'USR-002',
+            //     'nama' => 'bay',
+            //     'username' => 'bay',
+            //     'password' => bcrypt('123'),
+            //     'alamat' => 'lotim',
+            //     'hp' => '1234567890', // Change this to an appropriate phone number
+            //     'is_admin' => 0
+            // ],
 
             // Add more users as needed
         ];
