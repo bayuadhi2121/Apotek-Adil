@@ -26,8 +26,8 @@ use App\Http\Controllers\UserController;
 
 
 Route::get('/', function () {
-    dd('Route executed');
-    // return view('pages.Home');
+
+    return view('pages.Home');
     // })->name('home');
 });
 
