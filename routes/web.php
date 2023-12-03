@@ -26,10 +26,8 @@ use App\Http\Controllers\UserController;
 
 
 Route::get('/', function () {
-
     return view('pages.Home');
-    // })->name('home');
-});
+})->name('home');
 
 Route::resource('/login', UserController::class)->only(['index', 'show', 'edit', 'store']);
 
