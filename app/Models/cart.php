@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class cart extends Model
 {
     use HasFactory;
+    public $table = 'users';
     protected $guarded = [];
     protected $primaryKey = 'id';
 
