@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\user;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -41,7 +41,7 @@ class UserController extends Controller
 
         $credentials['password'] = Hash::make($request->password);
 
-        user::create($credentials);
+        User::create($credentials);
 
         // You can add a success message or redirection here
         return redirect()->route('login.index')->with('success', 'User registered successfully');
