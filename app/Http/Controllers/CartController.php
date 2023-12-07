@@ -23,6 +23,7 @@ class CartController extends Controller
     public function index()
     {
         $cartItems = cart::where('id', auth()->user()->id)->get();
+
         if ($cartItems != null) {
             $totalCost = $cartItems->sum(function ($item) {
                 return $item->produk->harga * $item->qty;
