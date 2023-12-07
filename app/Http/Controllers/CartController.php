@@ -51,7 +51,7 @@ class CartController extends Controller
             return redirect()->route('login'); // You can redirect to the login page or handle it differently
         }
 
-        $cart = Cart::where('id_user', $user->id)->get();
+        $cart = Cart::where('id', $user->id)->get();
 
         if ($cart->isEmpty()) {
             toast('Barang Sudah Di Checkout !', 'danger');

@@ -49,6 +49,8 @@ class ResepController extends Controller
 
         $credentials['id_user'] = Auth::user()->id;
         Resep::create($credentials);
+
+        return redirect()->route('resep.index');
     }
 
     /**
