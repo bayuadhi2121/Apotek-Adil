@@ -29,10 +29,9 @@ class CartController extends Controller
                 return $item->produk->harga * $item->qty;
             });
         }
-        return view('Pages.Cart', [
+        return view('pages.Cart', [
             'cart' => $cartItems ?? 0,
             'total' => $totalCost ?? 0
-
         ]);
     }
 
