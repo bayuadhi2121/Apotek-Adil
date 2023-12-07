@@ -23,12 +23,14 @@ class CartController extends Controller
     public function index()
     {
         $cartItems = cart::where('id', auth()->user()->id)->get();
-        $totalCost = $cartItems->sum(function ($item) {
-            return $item->produk->harga * $item->qty;
-        });
+        if ($cartItems != null) {
+            $totalCost = $cartItems->sum(function ($item) {
+                return $item->produk->harga * $item->qty;
+            });
+        }
         return view('Pages.Cart', [
-            'cart' => $cartItems,
-            'total' => $totalCost
+            'cart' => $cartItems ?? 0,
+            'total' => $totalCost ?? 0
 
         ]);
     }
