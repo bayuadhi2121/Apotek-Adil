@@ -39,12 +39,9 @@ class UserController extends Controller
             'hp' => ['required', 'numeric'],
         ]);
 
-        // Hash the password
         $credentials['password'] = Hash::make($request->password);
 
-        // Now, you can save the user data to the database
-        // Replace 'User' with your actual User model class
-        User::create($credentials);
+        user::create($credentials);
 
         // You can add a success message or redirection here
         return redirect()->route('login.index')->with('success', 'User registered successfully');
