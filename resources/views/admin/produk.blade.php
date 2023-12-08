@@ -88,16 +88,18 @@
             <div class="modal-body">
                 <!-- Add your form or content here -->
                 <form method="POST" action="{{ route('adminProduk.store') }}" enctype="multipart/form-data">
-                    <!-- Your form fields go here -->
 
                     @csrf
                     <div class="mb-3">
                         <label for="productName" class="form-label">Nama Produk</label>
-                        <input type="text" class="form-control" placeholder="Nama" name="nama">
+                        <input type="text" class="form-control" placeholder="Nama" name="nama" required>
+                        @error('nama')
+                        <span class="error text-sm text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="deskripsi" class="form-label">Deskripsi Produk</label>
-                        <textarea class="form-control" name="deskripsi"></textarea>
+                        <textarea class="form-control" name="deskripsi" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Indikasi</label>
@@ -120,13 +122,16 @@
 
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Kategori</label>
-                        <select class="form-control" name="id_kategori">
-                            <option selected>Open this select menu</option>
+                        <select class="form-control" name="id_kategori" placeholder="Pilih Kategori">
+                            <option value="" disabled selected>Pilih Kategori</option>
                             @foreach($kategori as $category)
 
                             <option value="{{ $category->id }}">{{ $category->nama }}</option>
                             @endforeach
                         </select>
+                        @error('id_kategori')
+                        <span class="error text-sm text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Harga</label>
@@ -173,6 +178,9 @@
                     <div class="mb-3">
                         <label for="productName" class="form-label">Nama Produk</label>
                         <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama">
+                        @error('nama')
+                        <span class="error text-sm text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="deskripsi" class="form-label">Deskripsi Produk</label>
