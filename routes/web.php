@@ -50,3 +50,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('/resep', ResepController::class)->only(['index', 'show', 'edit', 'store']);
     Route::resource('/profile', ProfileController::class)->only(['update', 'index']);
 });
+
+Route::get('generate', function () {
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    echo 'ok';
+});
