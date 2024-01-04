@@ -7,8 +7,9 @@
             <div class="col-12">
                 <div class="text-center text-white">
                     <span class="heading-xxs letter-spacing-xl"
-                        style="font-size: 18px; font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 0.5px">Enjoy
-                        Our Final Year Discount Up to 30% 👀🤑🎉</span>
+                        style="font-size: 18px; font-family: 'Poppins', sans-serif; font-weight: 300; letter-spacing: 0.5px">Verifikasi
+                        resep akan dilakukan setiap hari pada pukul 09:00 - 21:00, jika terlewat akan dilakukan pada
+                        keesokan harinya </span>
                 </div>
             </div>
         </div>
@@ -26,25 +27,37 @@
 
     <div class="row py-3">
         <div class="button-transaksi grid gap-">
-            <button type="button" class="btn btn-outline-secondary">Semua</button>
-            <button type="button" class="btn btn-outline-secondary">Diterima</button>
-            <button type="button" class="btn btn-outline-secondary">Ditolak</button>
-            <button type="button" class="btn btn-outline-secondary">Ditinjau</button>
+            <a href="{{ route('resep.index') }}" type="button"
+                class="btn btn-outline-secondary {{ request('category') == null ? ' active' : '' }}">Semua</a>
+            <a href="{{ route('resep.index', ['category' => 'Diterima']) }}" type="button"
+                class="btn btn-outline-secondary {{ request('category') == 'Diterima' ? ' active' : '' }}">Diterima</a>
+            <a href="{{ route('resep.index', ['category' => 'Ditolak']) }}" type="button"
+                class="btn btn-outline-secondary {{ request('category') == 'Ditolak' ? ' active' : '' }}">Ditolak</a>
+            <a href="{{ route('resep.index', ['category' => 'Ditinjau']) }}" type="button"
+                class="btn btn-outline-secondary {{ request('category') == 'Ditinjau' ? ' active' : '' }}">Ditinjau</a>
 
         </div>
     </div>
     <div class="py-3 d-grid ">
-        {{-- <div class="col-12 py-5 ">
-            <p>Tidak Ada Resep</p>
-        </div> --}}
+
         <div class="row row-cols-2 gap-4">
+            @php
+            $status="";
+            @endphp
             @forelse ($resep as $item)
             <div class="cardtrx py-3 col-md-5 col-12 ">
                 <div class="d-flex justify-content-between ">
                     <div class="align-items-ce">
                         <span class="h4" style="">Resep</span>
                     </div>
-                    <div class="statustrx align-items-center px-lg-3 py-lg-1 px-sm-3 py-sm-1">
+                    @if($item->status == 'Ditolak')
+                    @php $status = "bg-danger"; @endphp
+                    @elseif($item->status == 'Diterima')
+                    @php $status = "bg-succes"; @endphp
+                    @else
+                    @php $status = "bg-warning"; @endphp
+                    @endif
+                    <div class="{{ $status }} rounded-pill align-items-center px-lg-3 py-lg-1 px-sm-3 py-sm-1">
                         <span class="status text-white">{{ $item->status }}</span>
                     </div>
                 </div>
@@ -71,7 +84,11 @@
 
             </div>
             @empty
-
+            <div class="col-12 py-5 ">
+                <p
+                    class="bg-danger text-white p-2 rounded text-center  text-sm-10 d-flex justify-content-center align-items-center">
+                    Tidak Ada Resep</p>
+            </div>
             @endempty
 
         </div>

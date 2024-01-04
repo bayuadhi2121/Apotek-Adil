@@ -24,8 +24,17 @@
                                 $item->produk->kategori->nama
                                 }}</small>
                             <p class="pt-2" style="color: #3682f4">Rp {{ $item->produk->harga }}</p>
-                            <input class="form-control form-control-xs mt-3" style="width: 112px;"
-                                value="{{ $item->qty }}" min="1" readonly />
+
+                            <div class="d-flex gap-2">
+                                <a href="{{ route('cart.edit', ['cart' => $item->produk->id,'jenis'=>'tambah']) }}"
+                                    class="btn btn-primary col-3">+</a>
+                                <input class="form-control form-control-xs text-center" style="width: 112px;"
+                                    value="{{ $item->qty }}" min="1" readonly />
+                                <a href="{{ route('cart.edit', ['cart' => $item->produk->id,'jenis'=>'kurang']) }}"
+                                    class="btn btn-primary col-3">-</a>
+                            </div>
+
+
 
                         </div>
                         <div class="col-2 text-end mt-3">

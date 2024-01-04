@@ -57,7 +57,7 @@
                                     <td class="align-middle">
                                         <a class="text-secondary font-weight-bold text-xs" data-bs-toggle="modal"
                                             href="" data-bs-target="#exampleModaledit" data-toggle="tooltip"
-                                            onclick="setEdit('{{ route('adminProduk.update', ['adminProduk' => $item->id]) }}', '{{ $item->nama }}', '{{ $item->deskripsi }}', '{{ $item->kategori->id }}', '{{ $item->harga }}', '{{ $item->stok }}', '{{ $item->kandungan }}', '{{ $item->indikasi }}', '{{ $item->aturanpakai }}', '{{ $item->perhatian }}')">
+                                            onclick="setEdit('{{ route('adminProduk.update', ['adminProduk' => $item->id]) }}', '{{ $item->nama }}', '{{ $item->deskripsi }}', '{{ $item->kategori->id }}', '{{ $item->harga }}', '{{ $item->stok }}', '{{ $item->kandungan }}', '{{ $item->indikasi }}', '{{ $item->aturanpakai }}', '{{ $item->perhatian }}','{{ $item->foto }}')">
                                             Edit
                                         </a>
                                         <a class="text-secondary font-weight-bold text-xs px-2"
@@ -103,26 +103,27 @@
                     </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Indikasi</label>
-                        <textarea class="form-control" name="indikasi"></textarea>
+                        <textarea class="form-control" name="indikasi" required></textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Aturan Pakai</label>
-                        <textarea class="form-control" name="aturanpakai"></textarea>
+                        <textarea class="form-control" name="aturanpakai" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Perhatian</label>
-                        <textarea class="form-control" name="perhatian"></textarea>
+                        <textarea class="form-control" name="perhatian" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="productImage" class="form-label">Kandungan Utama</label>
-                        <input class="form-control" rows="3" placeholder="Kandungan Utama Obat" name="kandungan">
+                        <input class="form-control" rows="3" placeholder="Kandungan Utama Obat" name="kandungan"
+                            required>
                     </div>
 
 
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Kategori</label>
-                        <select class="form-control" name="id_kategori" placeholder="Pilih Kategori">
+                        <select class="form-control" name="id_kategori" placeholder="Pilih Kategori " required>
                             <option value="" disabled selected>Pilih Kategori</option>
                             @foreach($kategori as $category)
 
@@ -135,16 +136,16 @@
                     </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Harga</label>
-                        <input class="form-control" rows="3" placeholder="Harga" name="harga">
+                        <input class="form-control" rows="3" placeholder="Harga" name="harga" required>
                     </div>
                     <div class="mb-3">
                         <label for="productDescription" class="form-label">Stok</label>
-                        <input class="form-control" rows="3" placeholder="Stok" name="stok">
+                        <input class="form-control" rows="3" placeholder="Stok" name="stok" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="productImage" class="form-label">Product Image</label>
-                        <input type="file" class="form-control" name="foto">
+                        <input type="file" class="form-control" name="foto" required>
                         <small class="form-text text-muted">Upload an image for the product.</small>
                     </div>
 
@@ -224,9 +225,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="productImage" class="form-label">Product Image</label>
-                        <input type="file" class="form-control" id="foto" name="foto">
+                        <label for="productImage" class="form-label" id="productImageLabel">Product Image</label>
+
+                        <input type="file" class="form-control" id="foto" name="foto" onchange="updateFileName(this)">
                         <small class="form-text text-muted">Upload an image for the product.</small>
+                        <div class="input-group">
+                            <small class="form-text">Gambar Sekarang : <span id="ganti">Kosong</span></small>
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -247,8 +252,9 @@
 @endsection
 
 @section('script')
+
 <script>
-    function setEdit(url,nama,deskripsi,kategori,harga,stok,kandungan,indikasi,aturanpakai,perhatian){
+    function setEdit(url,nama,deskripsi,kategori,harga,stok,kandungan,indikasi,aturanpakai,perhatian,foto){
     document.getElementById("form1").action = url;
     document.getElementById("nama").value = nama;
     document.getElementById("deskripsi").value = deskripsi;
@@ -259,7 +265,9 @@
     document.getElementById("indikasi").value = indikasi; 
     document.getElementById("aturanpakai").value = aturanpakai; 
     document.getElementById("perhatian").value = perhatian; 
-    // document.getElementById("foto").value = foto; 
+    var fileNameSpan = document.getElementById("ganti");
+    fileNameSpan.textContent = foto;
+ 
 // console.log(kategori);
    const idKategoriSelect = document.getElementById("id_kategori");
 
@@ -270,6 +278,12 @@
                 break; // Exit the loop once a match is found
             }
         }
+    }
+
+ function updateFileName(input) {
+        // Update the label next to the file input
+        var fileNameSpan = document.getElementById("ganti");
+        fileNameSpan.textContent = input.files[0].name;
     }
 </script>
 <script>

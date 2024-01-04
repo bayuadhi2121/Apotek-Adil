@@ -43,7 +43,7 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         if (!Auth::check()) {
-            return back();
+            return redirect('login');
         }
         $cartItem = Cart::where('id_produk', $request->id)->first();
 

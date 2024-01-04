@@ -16,13 +16,14 @@ class CartController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth'); // Example middleware applied to all methods in the controller
+        $this->middleware('auth');
     }
 
 
     public function index()
     {
-        $cartItems = cart::where('id', auth()->user()->id)->get();
+        $cartItems = cart::where('id_user', auth()->user()->id)->get();
+
 
         if ($cartItems != null) {
             $totalCost = $cartItems->sum(function ($item) {
@@ -114,9 +115,16 @@ class CartController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id, Request $request)
     {
-        //
+        $cart = cart::where('id_produk', $id)->first();
+        if ($request->jenis == 'tambah') {
+            $qtynow = $cart->qty + 1;
+        } else {
+            $qtynow = $cart->qty - 1;
+        }
+        $cart->update(['qty' => $qtynow]);
+        return back();
     }
 
     /**

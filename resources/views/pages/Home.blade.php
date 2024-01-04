@@ -97,7 +97,7 @@
                             RESEP
                         </h1>
                         <div class="justify-content-md-end">
-                            <a class="btn btn-outline-light rounded-pill"
+                            <a class="btn btn-outline-light rounded-pill" href="{{ route('resep.index') }}"
                                 style="margin-right: 24px; margin-top: 12px; margin-bottom: 12px" href="#"
                                 role="button">Lihat</a>
                         </div>
@@ -119,6 +119,7 @@
                         </h1>
                         <div class="justify-content-md-end">
                             <a class="btn btn-outline-light rounded-pill"
+                                href="{{ route('produk.index', ['category' => 'Obat Resep']) }}"
                                 style="margin-right: 24px; margin-top: 12px; margin-bottom: 12px" href="#"
                                 role="button">Lihat</a>
                         </div>
@@ -139,7 +140,7 @@
                                 KATEGORI <br />
                                 LAINNYA
                             </h1>
-                            <a class="btn btn-outline-light rounded-pill"
+                            <a class="btn btn-outline-light rounded-pill" href="{{ route('produk.index') }}"
                                 style="margin-right: 24px; margin-top: 12px; margin-bottom: 12px" href="#"
                                 role="button">Lihat</a>
                         </div>

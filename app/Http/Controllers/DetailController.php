@@ -28,7 +28,7 @@ class DetailController extends Controller
     public function store(Request $request)
     {
         if (!Auth::check()) {
-            return back();
+            return redirect('login');
         }
         $cart = cart::where('id_produk', $request->produk)->first();
         if ($cart) {

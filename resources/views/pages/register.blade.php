@@ -58,7 +58,8 @@
                     <div class="text-center text-lg-start mt-2">
                         <button type="submit" class="btn btn-primary btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
-
+                        <p class="small fw-bold mt-2 pt-1 mb-0">Sudah Punya Akun ? <a href="{{ route('login.index') }}"
+                                class="link-danger">Login</a></p>
                     </div>
 
                 </form>

@@ -11,11 +11,16 @@ class ResepController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('pages.Resep', [
-            'resep' => Resep::where('id_user', auth()->user()->id)->get()
-        ]);
+        $category = $request->input('category');
+        if ($category != null) {
+            $resep = Resep::where('status', $category)->get();
+        } else {
+            $resep = Resep::where('id_user', auth()->user()->id)->get();
+        }
+
+        return view('pages.Resep', compact('resep'));
     }
 
     /**

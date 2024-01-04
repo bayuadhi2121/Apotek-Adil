@@ -10,23 +10,27 @@
         <div class="collapse navbar-collapse" id="navbarsExample07">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('home')}}">Beranda</a>
+                    <a class="nav-link {{ Request::is('/') ? ' active' : '' }}" aria-current="page"
+                        href="{{route('home')}}">Beranda</a>
                 </li>
                 @if(Auth::check())
                 @if(Auth::user()->is_admin)
 
                 @else
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('resep.index') }}">Resep</a>
+                    <a class="nav-link {{ Request::is('resep') ? 'active' : '' }}"
+                        href="{{ route('resep.index') }}">Resep</a>
                 </li>
                 @endif
                 @else
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('resep.index') }}">Resep</a>
+                    <a class="nav-link {{ Request::is('resep') ? 'active' : '' }}"
+                        href="{{ route('resep.index') }}">Resep</a>
                 </li>
                 @endif
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('produk.index')}}">Produk</a>
+                    <a class="nav-link {{ Request::is('produk') ? 'active' : '' }}"
+                        href="{{route('produk.index')}}">Produk</a>
                 </li>
 
             </ul>
@@ -57,12 +61,14 @@
                 <a href=" {{ route('adminProduk.index') }}" class=" btn btn-labeled btn-primary mx-2" href=""> Back To
                     Admin</a>
                 @else
-                <div class="flex-shrink-0 dropdown">
+                <div class="flex-shrink-0 dropdown pb-1 pt-lg-0 pt-md-0 pt-sm-0 pt-4">
 
-                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{asset('image/undraw_medicine_b-1-ol(1) 1.png')}} " alt="profile pic" width="32"
-                            height="32" class="rounded-circle" />
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle p-0 m-0"
+                        id="dropdownUser2" data-bs-toggle="dropdown" style="font-size: 18px; color: #1B7D53;"
+                        aria-expanded="false">
+                        {{ Auth::user()->nama }}
+                        {{-- <img src="{{asset('image/undraw_medicine_b-1-ol(1) 1.png')}} " alt="profile pic" width="32"
+                            height="32" class="rounded-circle" /> --}}
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                         <li><a class="dropdown-item" href="{{route('profile.index')}}">Profile</a></li>
