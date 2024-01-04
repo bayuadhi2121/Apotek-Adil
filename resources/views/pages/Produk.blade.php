@@ -68,7 +68,7 @@
                                 style="margin-top: 30px;">30% Off
                             </div> --}}
                             <!-- image -->
-                            <img src="{{ asset('storage/' . $item->foto) }}" class="card-img-top" alt="" />
+                            <img src="{{ asset('storage/produk/' . $item->foto) }}" class="card-img-top" alt="" />
                             <div class="card-body" style="margin-left: -1rem;">
                                 <h5 class="card-title">{{ $item->nama }}</h5>
                                 <a href="{{ route('produk.index', ['category' => $item->kategori->nama]) }}">
