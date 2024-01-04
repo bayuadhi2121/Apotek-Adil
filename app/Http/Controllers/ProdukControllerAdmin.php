@@ -52,16 +52,15 @@ class ProdukControllerAdmin extends Controller
         // Add the slug to the validated data.
         $validatedData['slug'] = $slug;
         if ($request->hasFile('foto')) {
-
             $imageFile = $request->file('foto'); // Get the uploaded image file.
             $imageName = $imageFile->getClientOriginalName(); // Get the original file name.
-            $imagePath = 'produk/' . $imageName; // Define the image path relative to the storage directory.
+            // $imagePath = $imageName; // Define the image path relative to the storage directory.
 
-            // Move the uploaded image to the 'storage/resep' directory.
-            $imageFile->storeAs('public/produk', $imageName);
+            // // Move the uploaded image to the 'storage/resep' directory.
+            $imageFile->store('public/');
 
             // You can optionally store the image path in the validated data.
-            $validatedData['foto'] = $imagePath;
+            $validatedData['foto'] = $imageName;
         }
         produk::create($validatedData);
 
