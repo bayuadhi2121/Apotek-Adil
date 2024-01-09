@@ -36,8 +36,8 @@
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="col d-flex align-items-start ">
             <div class="flex-shrink-0 me-3 section1">
-                <img src="{{ asset('image/healthicons_child-care.png') }}" alt="" class="pb-2"
-                    style="color: #1B7D53; width: 66px ; height:66px; ">
+                <img src="{{ asset('image/healthicons_child-care.png') }}" alt="" class="pb-3"
+                    style="color: #1B7D53; width: 78px ; height:78px; ">
                 {{-- <span class=" iconify " data-inline=" false" data-icon="ic:baseline-location-on"
                     style="color: #1B7D53; font-size: 48px"></span> --}}
             </div>
@@ -51,8 +51,8 @@
 
         <div class="col d-flex align-items-start section2">
             <div class="flex-shrink-0 me-3">
-                <img src="{{ asset('image/verified.png') }}" alt=""
-                    style="color: #1B7D53; width: 48px ;height:48px; top:10px">
+                <img src="{{ asset('image/verified.png') }}" alt="" class="mt-2"
+                    style="color: #1B7D53; width: 48px ;height:48px; ">
                 {{-- <span class="iconify" data-inline="false" data-icon="ic:twotone-delivery-dining"
                     style="color: #1B7D53; font-size: 48px"></span> --}}
             </div>
@@ -66,7 +66,8 @@
 
         <div class="col d-flex align-items-start section3 vo">
             <div class="flex-shrink-0 me-3">
-                <img src="{{ asset('image/time.png') }}" alt="" style="color: #1B7D53; width: 48px ; height:48px; ">
+                <img src="{{ asset('image/time.png') }}" class="mt-2"
+                    style="color: #1B7D53; width: 48px ; height:48px; ">
                 {{-- <span class="iconify" data-inline="false" data-icon="bx:bx-support"
                     style="color: #1B7D53; font-size: 48px"></span> --}}
             </div>
