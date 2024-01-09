@@ -36,40 +36,45 @@
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="col d-flex align-items-start ">
             <div class="flex-shrink-0 me-3 section1">
-                <span class="iconify " data-inline="false" data-icon="ic:baseline-location-on"
-                    style="color: #1B7D53; font-size: 48px"></span>
+                <img src="{{ asset('image/healthicons_child-care.png') }}" alt="" class="pb-2"
+                    style="color: #1B7D53; width: 66px ; height:66px; ">
+                {{-- <span class=" iconify " data-inline=" false" data-icon="ic:baseline-location-on"
+                    style="color: #1B7D53; font-size: 48px"></span> --}}
             </div>
             <div class="">
-                <h2 style="color: #1B7D53; font-size: 24px; font-family: 'Mulish', sans-serif; font-weight: 700">Apotik
-                    di Dekat Anda </h2>
-                <p style="color: #1B7D53; font-size: 16px; font-family: 'Mulish', sans-serif; font-weight: 400">Apotik
-                    Terdekat dari Rumah Anda.</p>
+                <h2 style="color: #1B7D53; font-size: 24px; font-family: 'Mulish', sans-serif; font-weight: 700">Service
+                    With Care</h2>
+                <p style="color: #1B7D53; font-size: 16px; font-family: 'Mulish', sans-serif; font-weight: 400">Melayani
+                    dengan sepenuh hati</p>
             </div>
         </div>
 
         <div class="col d-flex align-items-start section2">
             <div class="flex-shrink-0 me-3">
-                <span class="iconify" data-inline="false" data-icon="ic:twotone-delivery-dining"
-                    style="color: #1B7D53; font-size: 48px"></span>
+                <img src="{{ asset('image/verified.png') }}" alt=""
+                    style="color: #1B7D53; width: 48px ;height:48px; top:10px">
+                {{-- <span class="iconify" data-inline="false" data-icon="ic:twotone-delivery-dining"
+                    style="color: #1B7D53; font-size: 48px"></span> --}}
             </div>
             <div class="">
                 <h2 style="color: #1B7D53; font-size: 24px; font-family: 'Mulish', sans-serif; font-weight: 700">
-                    Kualitas Terjamin</h2>
-                <p style="color: #1B7D53; font-size: 16px; font-family: 'Mulish', sans-serif; font-weight: 400">Obat
-                    yang Sudah Terjamin Kualitasnya.</p>
+                    High-Quality Products</h2>
+                <p style="color: #1B7D53; font-size: 16px; font-family: 'Mulish', sans-serif; font-weight: 400">Tersedia
+                    obat generik & branded berkualitas</p>
             </div>
         </div>
 
-        <div class="col d-flex align-items-start section3">
+        <div class="col d-flex align-items-start section3 vo">
             <div class="flex-shrink-0 me-3">
-                <span class="iconify" data-inline="false" data-icon="bx:bx-support"
-                    style="color: #1B7D53; font-size: 48px"></span>
+                <img src="{{ asset('image/time.png') }}" alt="" style="color: #1B7D53; width: 48px ; height:48px; ">
+                {{-- <span class="iconify" data-inline="false" data-icon="bx:bx-support"
+                    style="color: #1B7D53; font-size: 48px"></span> --}}
             </div>
             <div class="">
-                <h2 style="color: #1B7D53; font-size: 24px; font-family: 'Mulish', sans-serif; font-weight: 700">24/7
-                    Customer Care</h2>
-                <p style="color: #1B7D53; font-size: 16px; font-family: 'Mulish', sans-serif; font-weight: 400">Jika
-                    Mengalami Kendala Kami Siap Membantu Anda Setiap Saat.</p>
+                <h2 style="color: #1B7D53; font-size: 24px; font-family: 'Mulish', sans-serif; font-weight: 700">
+                    All Day, Every Day</h2>
+                <p style="color: #1B7D53; font-size: 16px; font-family: 'Mulish', sans-serif; font-weight: 400">
+                    Pelayanan setiap hari hingga jam 12 malam</p>
             </div>
         </div>
     </div>

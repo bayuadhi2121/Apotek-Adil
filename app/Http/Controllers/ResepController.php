@@ -40,7 +40,6 @@ class ResepController extends Controller
 
         ]);
 
-
         $imageFile = $request->file('foto'); // Get the uploaded image file.
         $imageName = $imageFile->getClientOriginalName(); // Get the original file name.
         $imagePath = $imageName; // Define the image path relative to the storage directory.
