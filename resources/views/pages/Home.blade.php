@@ -43,7 +43,7 @@
             </div>
             <div class="">
                 <h2 style="color: #1B7D53; font-size: 24px; font-family: 'Mulish', sans-serif; font-weight: 700">Service
-                    With Care</h2>
+                    with Care</h2>
                 <p style="color: #1B7D53; font-size: 16px; font-family: 'Mulish', sans-serif; font-weight: 400">Melayani
                     dengan sepenuh hati</p>
             </div>
@@ -160,19 +160,44 @@
 <!-- Best Deals End -->
 
 <!-- Best Sales Start -->
-<section id="bestsales">
-    <div class="container cont2 py-lg-5 col-xxl-5 col-lg-5 ">
+<section id="bestsales" class="d-flex ">
+
+    <div class="container cont2 py-lg-5 col-xxl-4 col-lg-4 me-0">
         <div class="container-responsive" style="background-color: #1B7D53; border-radius: 20px;">
             <div class="p-lg-5 d-flex justify-content-center align-items-center flex-column">
                 <h1 class="text-white konsul">Ingin Konsultasi Dengan Apoteker?</h1>
                 <div class="col-5 justify-center div-wa pt-4">
-                    <a href="https://wa.me/6287798188955" class="btn btn-labeled btn-primary btn-wa"
+                    <a href="https://wa.me/6287865861482" class="btn btn-labeled btn-primary btn-wa"
                         style="background-color: white;">Klik Via WhatsApp</a>
                 </div>
+                <div class="mt-4">
+                    <span class=" text-white">Periode Konsultasi:
 
+                        Senin - Jumat
+                        17:00 - 21:00</span>
+                </div>
             </div>
 
         </div>
+    </div>
+    <div class="container cont2 py-lg-5 col-xxl-4 col-lg-4 ms-0">
+        <div class="container-responsive" style="background-color: #1B7D53; border-radius: 20px;">
+            <div class="p-lg-5 d-flex justify-content-center align-items-center flex-column">
+                <h1 class="text-white konsul">Ingin Pesan Langsung di Apotek?</h1>
+                <div class="col-5 justify-center div-wa pt-4">
+                    <a href="https://wa.me/6287798188955" class="btn btn-labeled btn-primary btn-wa"
+                        style="background-color: white;">Klik Via WhatsApp</a>
+                </div>
+                <div class="mt-4">
+                    <span class=" text-white">Periode Konsultasi:
+
+                        Senin - Minggu
+                        08:00 - 00:00</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 <div class="section">
     <div class="container py-lg-5"></div>
