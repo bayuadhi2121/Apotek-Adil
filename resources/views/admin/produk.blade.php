@@ -270,7 +270,7 @@
         document.getElementById("form1").action = url;
         console.log(nama);
         document.getElementById("nama").value = nama;
-        document.getElementById('deskripsi').value = '{{$deskripsi}}'.replace(/\n/g, '\\n');
+        document.getElementById('deskripsi').value = deskripsi;
         document.getElementById("id_kategori").value = kategori;
         document.getElementById("harga").value = harga;
         document.getElementById("stok").value = stok;
