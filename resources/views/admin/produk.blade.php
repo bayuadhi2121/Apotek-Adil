@@ -269,7 +269,7 @@
     function setEdit(url, nama, deskripsi, kategori, harga, stok, kandungan, indikasi, aturanpakai, perhatian, foto, promo, harga_promo) {
         document.getElementById("form1").action = url;
         console.log(nama);
-        document.getElementById("nama").value = nama;
+        document.getElementById("nama").value = nama.replace(/\n/g, '\\n');
         document.getElementById("deskripsi").value = String.raw`${deskripsi}`;
         document.getElementById("id_kategori").value = kategori;
         document.getElementById("harga").value = harga;
