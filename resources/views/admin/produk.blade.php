@@ -268,6 +268,7 @@
 <script>
     function setEdit(url,nama,deskripsi,kategori,harga,stok,kandungan,indikasi,aturanpakai,perhatian,foto,promo,harga_promo){
     document.getElementById("form1").action = url;
+    console.log(nama);
     document.getElementById("nama").value = nama;
     document.getElementById("deskripsi").value = deskripsi;
     document.getElementById("id_kategori").value = kategori;
@@ -323,6 +324,8 @@
   document.getElementById("aturanpakai").value = '';
   document.getElementById("perhatian").value = '';
   document.getElementById("foto").value = '';
+  document.getElementById("toggleSwitch").value = '';
+  document.getElementById("harga_promo").value = '';
   }
 </script>
 <script>

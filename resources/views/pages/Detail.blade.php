@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div class="btn-group mt-3" style="width: 100%" role="group" aria-label="Basic outlined example">
-                <button type="button" style="width: 100%">INFORMASI TAMBAHAN</button>
+                <button type="" style="width: 100%">INFORMASI TAMBAHAN</button>
             </div>
             <!-- Description and others -->
             <div class=" my-lg-3 py-1">
