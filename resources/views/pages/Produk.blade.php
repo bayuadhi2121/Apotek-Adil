@@ -27,16 +27,16 @@
                                             class="link-dark rounded"
                                             style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Obat
                                             Bebas</a></li>
-                                    <li><a href="{{ route('produk.index', ['category' => 'Vitamin & Suplemen']) }}"
+                                    <li><a href="{{ route('produk.index', ['category' => 'Vitamin dan Suplemen']) }}"
                                             class="link-dark rounded"
                                             style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Vitamin
                                             & Suplemen</a></li>
-                                    <li><a href="{{ route('produk.index', ['category' => 'Ibu & Bayi']) }}"
+                                    <li><a href="{{ route('produk.index', ['category' => 'Ibu dan Bayi']) }}"
                                             class="link-dark rounded"
                                             style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Ibu
                                             & Bayi</a>
                                     </li>
-                                    <li><a href="{{ route('produk.index', ['category' => 'Beauty & Skincare']) }}"
+                                    <li><a href="{{ route('produk.index', ['category' => 'Beauty dan Skincare']) }}"
                                             class="link-dark rounded"
                                             style="font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: 400">Beauty
                                             & Skincare</a>
