@@ -57,7 +57,7 @@
                                     <td class="align-middle">
                                         <a class="text-secondary font-weight-bold text-xs" data-bs-toggle="modal"
                                             href="" data-bs-target="#exampleModaledit" data-toggle="tooltip"
-                                            onclick="setEdit(`{{ route('adminProduk.update', ['adminProduk' => $item->id]) }}`, `{{ $item->nama }}`, `{{ $item->deskripsi }}`, `{{ $item->kategori->id }}`, `{{ $item->harga }}`, `{{ $item->stok }}`, `{{ $item->kandungan }}`, `{{ $item->indikasi }}`, `{{ $item->aturanpakai }}`, `{{ $item->perhatian }}`,`{{ $item->foto }}`,`{{ $item->promo }}`,`{{ $item->harga_promo }}`)">
+                                            onclick="setEdit(`{{ route('adminProduk.update', ['adminProduk' => $item->id]) }}`, `{{ $item->nama }}`, `{{ $item->deskripsi }}`, `{{ $item->kategori->id }}`, `{{ $item->harga }}`, `{{ $item->stok }}`, `{{ $item->kandungan }}`, `{{ $item->indikasi }}`, `{{ $item->aturanpakai }}`, `{{ $item->perhatian }}`,'{{ $item->foto }}',`{{ $item->promo }}`,`{{ $item->harga_promo }}`)">
                                             Edit
                                         </a>
                                         <a class="text-secondary font-weight-bold text-xs px-2"
