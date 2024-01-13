@@ -36,8 +36,8 @@
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="col d-flex align-items-start ">
             <div class="flex-shrink-0 me-3 section1">
-                <img src="{{ asset('image/healthicons_child-care.png') }}" alt="" class="pb-3"
-                    style="color: #1B7D53; width: 78px ; height:78px; ">
+                <img src="{{ asset('image/healthicons_child-care.png') }}" alt="" class="pb-3 gambarhome1"
+                    style="color: #1B7D53; width: 60px ; height:60px; ">
                 {{-- <span class=" iconify " data-inline=" false" data-icon="ic:baseline-location-on"
                     style="color: #1B7D53; font-size: 48px"></span> --}}
             </div>
@@ -160,9 +160,9 @@
 <!-- Best Deals End -->
 
 <!-- Best Sales Start -->
-<section id="bestsales" class="d-flex ">
+<section id="bestsales" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
 
-    <div class="container cont2 py-lg-5 col-xxl-4 col-lg-4 me-0">
+    <div class=" container cont2 py-lg-5  col-xl-5 col-md-5  col-lg-5  me-0 ">
         <div class="container-responsive" style="background-color: #1B7D53; border-radius: 20px;">
             <div class="p-lg-5 d-flex justify-content-center align-items-center flex-column">
                 <h1 class="text-white konsul">Ingin Konsultasi Dengan Apoteker?</h1>
@@ -170,9 +170,8 @@
                     <a href="https://wa.me/6287865861482" class="btn btn-labeled btn-primary btn-wa"
                         style="background-color: white;">Klik Via WhatsApp</a>
                 </div>
-                <div class="mt-4">
-                    <span class=" text-white">Periode Konsultasi:
-
+                <div class="pb-3 pt-0 pt-md-3 pb-md-0">
+                    <span class=" text-white  text-periode">Periode Konsultasi:
                         Senin - Jumat
                         17:00 - 21:00</span>
                 </div>
@@ -180,7 +179,7 @@
 
         </div>
     </div>
-    <div class="container cont2 py-lg-5 col-xxl-4 col-lg-4 ms-0">
+    <div class="container cont2 py-lg-5 col-xl-5 col-md-5 col-lg-5  ms-0  ">
         <div class="container-responsive" style="background-color: #1B7D53; border-radius: 20px;">
             <div class="p-lg-5 d-flex justify-content-center align-items-center flex-column">
                 <h1 class="text-white konsul">Ingin Pesan Langsung di Apotek?</h1>
@@ -188,8 +187,8 @@
                     <a href="https://wa.me/6287798188955" class="btn btn-labeled btn-primary btn-wa"
                         style="background-color: white;">Klik Via WhatsApp</a>
                 </div>
-                <div class="mt-4">
-                    <span class=" text-white">Periode Konsultasi:
+                <div class="pb-3 pt-0 pt-md-3 pb-md-0">
+                    <span class=" text-white text-periode">Periode Konsultasi:
 
                         Senin - Minggu
                         08:00 - 00:00</span>

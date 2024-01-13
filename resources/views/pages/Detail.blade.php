@@ -40,6 +40,11 @@
 
                             </div>
                             <div class="mb-3">
+                                @if($detail->promo)
+                                <s class="text-muted text-decoration-line-through"
+                                    style="font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 600">
+                                    @currency($detail->harga_promo)</s>
+                                @endif
                                 <p class="card-text mb-2"
                                     style="color: #3682f4; font-size: 20px; font-family: 'Poppins', sans-serif; font-weight: 700">
                                     @currency($detail->harga)

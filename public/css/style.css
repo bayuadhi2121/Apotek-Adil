@@ -308,7 +308,46 @@ a:hover {
 
 @media (max-width:393px) {
 	.cari{
-		font-size: 5px;
+		font-size: 10px;
+	}
+	.gambarhome1{
+		margin-left: -10px;
+	}
+	.resep {
+		font-size: 10px;
+	}
+}
+@media (max-width:777px) {
+	.cari{
+		font-size: 10px;
+	}
+	.gambarhome1{
+		margin-left: -10px;
+	}
+	.resep {
+		font-size: 10px;
+	}
+}
+@media (max-width:949px) {
+	.text-periode{
+		font-size: 12px;
+	}
+	.konsul{
+		font-size: 20px;
+	}
+	.btn-wa{
+		font-size: 9px;
+	}
+}
+@media (max-width:992px) {
+	.text-periode{
+		font-size: 12px;
+	}
+	.konsul{
+		font-size: 20px;
+	}
+	.btn-wa{
+		font-size: 9px;
 	}
 }
 
@@ -346,6 +385,7 @@ a:hover {
 	padding-right: 10px;
 
 }
+
 .title{
 	font-size: 3px;
 }
@@ -417,3 +457,7 @@ a:hover {
   .catat{
 	margin-bottom: 0;
   }
+
+@media(max-width:361px) {
+	
+}
