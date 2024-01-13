@@ -4,7 +4,7 @@
 <div class="container col-xl-10 px-4 py-5">
     <div class="row align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6 text">
-            <h1 class="display-5 fw-bold mb-3" style="color: black; font-weight: 700">Selamat Datang <br> Apotek Adil
+            <h1 class="display-5 fw-bold mb-3" style="color: black; font-weight: 700">Selamat Datang di<br> Apotek Adil
             </h1>
             <p class="lead">
                 The best place with the best price to get your medicine with or without leaving your house. Get your
