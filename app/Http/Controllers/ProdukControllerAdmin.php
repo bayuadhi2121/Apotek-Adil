@@ -41,7 +41,6 @@ class ProdukControllerAdmin extends Controller
             'foto' => 'nullable'
         ]);
         $slug = Str::slug($validatedData['nama']);
-
         // Check if the generated slug already exists.
         $count = produk::where('slug', $slug)->count();
         if ($count > 0) {
