@@ -86,11 +86,11 @@
 
                                     <s class="text-muted text-decoration-line-through"
                                         style="font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 600">
-                                        @currency($item->harga_promo)</s>
+                                        @currency($item->harga)</s>
                                     @endif
                                     <s class="text-muted"
                                         style="font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 600"></s>
-                                    @currency($item->harga)
+                                    @currency($item->harga_promo)
                                 </p>
                                 <form action="{{ route('produk.store') }}" method="post">
                                     @csrf
