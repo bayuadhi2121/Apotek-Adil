@@ -266,47 +266,47 @@
 @section('script')
 
 <script>
-    function setEdit(url,nama,deskripsi,kategori,harga,stok,kandungan,indikasi,aturanpakai,perhatian,foto,promo,harga_promo){
-    document.getElementById("form1").action = url;
-    console.log(nama);
-    document.getElementById("nama").value = nama;
-    document.getElementById("deskripsi").value = deskripsi;
-    document.getElementById("id_kategori").value = kategori;
-    document.getElementById("harga").value = harga;
-    document.getElementById("stok").value = stok;
-    document.getElementById("kandungan").value = kandungan; 
-    document.getElementById("indikasi").value = indikasi; 
-    document.getElementById("aturanpakai").value = aturanpakai; 
-    document.getElementById("perhatian").value = perhatian;
-    console.log(promo);
-    document.getElementById("toggleSwitch").checked = promo == 1;
-    document.getElementById("harga_promo").value = harga_promo; 
-    var toggleSwitch = document.getElementById("toggleSwitch");
-    var promoInput = document.querySelector(".promo");
-    
-    // Set the initial state based on the checkbox
-    promoInput.style.display = toggleSwitch.checked ? "block" : "none";
-    
-    // Add an event listener to the slider to toggle the input field
-    toggleSwitch.addEventListener("change", function() {
-    promoInput.style.display = toggleSwitch.checked ? "block" : "none";
-    });
-    var fileNameSpan = document.getElementById("ganti");
-    fileNameSpan.textContent = foto;
- 
-// console.log(kategori);
-   const idKategoriSelect = document.getElementById("id_kategori");
+    function setEdit(url, nama, deskripsi, kategori, harga, stok, kandungan, indikasi, aturanpakai, perhatian, foto, promo, harga_promo) {
+        document.getElementById("form1").action = url;
+        console.log(nama);
+        document.getElementById("nama").value = nama;
+        document.getElementById("deskripsi").value = String.raw`${deskripsi}`;
+        document.getElementById("id_kategori").value = kategori;
+        document.getElementById("harga").value = harga;
+        document.getElementById("stok").value = stok;
+        document.getElementById("kandungan").value = kandungan;
+        document.getElementById("indikasi").value = indikasi;
+        document.getElementById("aturanpakai").value = aturanpakai;
+        document.getElementById("perhatian").value = perhatian;
+        console.log(promo);
+        document.getElementById("toggleSwitch").checked = promo == 1;
+        document.getElementById("harga_promo").value = harga_promo;
+        var toggleSwitch = document.getElementById("toggleSwitch");
+        var promoInput = document.querySelector(".promo");
+
+        // Set the initial state based on the checkbox
+        promoInput.style.display = toggleSwitch.checked ? "block" : "none";
+
+        // Add an event listener to the slider to toggle the input field
+        toggleSwitch.addEventListener("change", function () {
+            promoInput.style.display = toggleSwitch.checked ? "block" : "none";
+        });
+        var fileNameSpan = document.getElementById("ganti");
+        fileNameSpan.textContent = foto;
+
+        // console.log(kategori);
+        const idKategoriSelect = document.getElementById("id_kategori");
 
         // Loop through options to find and select the matching one
         for (let i = 0; i < idKategoriSelect.options.length; i++) {
-            if (idKategoriSelect.options[i].value === id_kategori) {
+            if (idKategoriSelect.options[i].value === kategori) {
                 idKategoriSelect.options[i].selected = true;
                 break; // Exit the loop once a match is found
             }
         }
     }
 
- function updateFileName(input) {
+    function updateFileName(input) {
         // Update the label next to the file input
         var fileNameSpan = document.getElementById("ganti");
         fileNameSpan.textContent = input.files[0].name;
