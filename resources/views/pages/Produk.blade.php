@@ -64,9 +64,13 @@
                     <div class="col-md-4">
                         <div class="card mb-4" style="width: auto">
                             <div class="badge badge-blue card-badge card-badge-left text-uppercase">New</div>
-                            {{-- <div class="badge badge-green card-badge card-badge-left text-uppercase"
-                                style="margin-top: 30px;">30% Off
-                            </div> --}}
+                            @if($item->promo)
+                            <div class="badge badge-green card-badge card-badge-left text-uppercase"
+                                style="margin-top: 30px;">{{ number_format((($item->harga - $item->harga_promo) /
+                                $item->harga) * 100, 0) }}% Off
+                            </div>
+                            @else
+                            @endif
                             <!-- image -->
                             <img src="{{ asset('storage/' . $item->foto) }}" class="card-img-top" alt="" />
                             <div class="card-body" style="margin-left: -1rem;">
@@ -78,6 +82,12 @@
                                 </a>
                                 <p class="card-text mb-2"
                                     style="color: #3682f4; font-size: 18px; font-family: 'Montserrat', sans-serif; font-weight: 700">
+                                    @if ($item->promo)
+
+                                    <s class="text-muted text-decoration-line-through"
+                                        style="font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 600">
+                                        @currency($item->harga_promo)</s>
+                                    @endif
                                     <s class="text-muted"
                                         style="font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 600"></s>
                                     @currency($item->harga)

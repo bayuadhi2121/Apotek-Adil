@@ -57,7 +57,7 @@
                                     <td class="align-middle">
                                         <a class="text-secondary font-weight-bold text-xs" data-bs-toggle="modal"
                                             href="" data-bs-target="#exampleModaledit" data-toggle="tooltip"
-                                            onclick="setEdit('{{ route('adminProduk.update', ['adminProduk' => $item->id]) }}', '{{ $item->nama }}', '{{ $item->deskripsi }}', '{{ $item->kategori->id }}', '{{ $item->harga }}', '{{ $item->stok }}', '{{ $item->kandungan }}', '{{ $item->indikasi }}', '{{ $item->aturanpakai }}', '{{ $item->perhatian }}','{{ $item->foto }}')">
+                                            onclick="setEdit('{{ route('adminProduk.update', ['adminProduk' => $item->id]) }}', '{{ $item->nama }}', '{{ $item->deskripsi }}', '{{ $item->kategori->id }}', '{{ $item->harga }}', '{{ $item->stok }}', '{{ $item->kandungan }}', '{{ $item->indikasi }}', '{{ $item->aturanpakai }}', '{{ $item->perhatian }}','{{ $item->foto }}','{{ $item->promo }}','{{ $item->harga_promo }}')">
                                             Edit
                                         </a>
                                         <a class="text-secondary font-weight-bold text-xs px-2"
@@ -220,6 +220,18 @@
                         <input class="form-control" id="harga" rows="3" placeholder="Harga" name="harga">
                     </div>
                     <div class="mb-3">
+                        <label for="" class="form-label">Promo</label>
+                        <label class="switch">
+                            <input name="promo" type="checkbox" id="toggleSwitch" {{ $item->promo ? 'checked' : '' }}>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="mb-3 promo" id="promo">
+                        <label for="" class="form-label">Harga Promo</label>
+                        <input class="form-control" rows="3" placeholder="" name="harga_promo" id="harga_promo"
+                            value="">
+                    </div>
+                    <div class="mb-3">
                         <label for="productDescription" class="form-label">Stok</label>
                         <input class="form-control" id="stok" rows="3" placeholder="Stok" name="stok">
                     </div>
@@ -254,7 +266,7 @@
 @section('script')
 
 <script>
-    function setEdit(url,nama,deskripsi,kategori,harga,stok,kandungan,indikasi,aturanpakai,perhatian,foto){
+    function setEdit(url,nama,deskripsi,kategori,harga,stok,kandungan,indikasi,aturanpakai,perhatian,foto,promo,harga_promo){
     document.getElementById("form1").action = url;
     document.getElementById("nama").value = nama;
     document.getElementById("deskripsi").value = deskripsi;
@@ -264,7 +276,20 @@
     document.getElementById("kandungan").value = kandungan; 
     document.getElementById("indikasi").value = indikasi; 
     document.getElementById("aturanpakai").value = aturanpakai; 
-    document.getElementById("perhatian").value = perhatian; 
+    document.getElementById("perhatian").value = perhatian;
+    console.log(promo);
+    document.getElementById("toggleSwitch").checked = promo == 1;
+    document.getElementById("harga_promo").value = harga_promo; 
+    var toggleSwitch = document.getElementById("toggleSwitch");
+    var promoInput = document.querySelector(".promo");
+    
+    // Set the initial state based on the checkbox
+    promoInput.style.display = toggleSwitch.checked ? "block" : "none";
+    
+    // Add an event listener to the slider to toggle the input field
+    toggleSwitch.addEventListener("change", function() {
+    promoInput.style.display = toggleSwitch.checked ? "block" : "none";
+    });
     var fileNameSpan = document.getElementById("ganti");
     fileNameSpan.textContent = foto;
  
@@ -299,6 +324,19 @@
   document.getElementById("perhatian").value = '';
   document.getElementById("foto").value = '';
   }
+</script>
+<script>
+    // Get the slider and input elements
+  var toggleSwitch = document.getElementById("toggleSwitch");
+  var promoInput = document.querySelector(".promo");
+
+  // Set the initial state based on the checkbox
+  promoInput.style.display = toggleSwitch.checked ? "block" : "none";
+
+  // Add an event listener to the slider to toggle the input field
+  toggleSwitch.addEventListener("change", function() {
+    promoInput.style.display = toggleSwitch.checked ? "block" : "none";
+  });
 </script>
 
 @endsection

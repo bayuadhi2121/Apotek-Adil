@@ -323,7 +323,12 @@ nav{
     height: 40px;
     width: 40px;
 }
-
+/* start */
+ .promo {
+     display: none;
+     /* Adjust the margin or any other styles as needed */
+ }
+/* end */
 
 @media (max-width: 992px) {
     .text{

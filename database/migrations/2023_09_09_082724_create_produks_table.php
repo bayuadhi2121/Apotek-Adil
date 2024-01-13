@@ -20,6 +20,8 @@ return new class extends Migration
             $table->longText('perhatian');
             $table->string('id_kategori', 50);
             $table->integer('harga');
+            $table->boolean('promo')->default(0);
+            $table->integer('harga_promo')->nullable();
             $table->integer('stok');
             $table->string('kandungan');
             $table->string('foto')->nullable();

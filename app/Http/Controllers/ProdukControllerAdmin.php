@@ -85,6 +85,11 @@ class ProdukControllerAdmin extends Controller
             'kandungan' => 'required',
             'foto' => 'nullable'
         ]);
+        if ($request->promo) {
+
+            $validatedData['promo'] = $request->promo ? 1 : 0;
+            $validatedData['harga_promo'] = $request->harga_promo;
+        }
         // $validatedData['kategori'] =  $request->kategori->nama;
         produk::find($id)->update($validatedData);
 
