@@ -222,7 +222,7 @@
                     <div class="mb-3">
                         <label for="" class="form-label">Promo</label>
                         <label class="switch">
-                            <input name="promo" type="checkbox" id="toggleSwitch" {{ $item->promo ? 'checked' : '' }}>
+                            <input name="promo" type="checkbox" id="toggleSwitch">
                             <span class="slider round"></span>
                         </label>
                     </div>
