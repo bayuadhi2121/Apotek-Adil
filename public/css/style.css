@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300&display=swap');
+*{
+	font-family: "Poppins";
+	font-weight: 400;
+}
+/* login */
+.divider:after,
+.divider:before {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: #eee;
+}
+
+.h-custom {
+	height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+	.h-custom {
+		height: 100%;
+	}
+}
+/*  */
+.btn-labeled {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.h1 {
+	font-family: "Poppins", sans-serif;
+}
+.gambar{
+	z-index: -1;
+}
+.card-deals {
+	height: auto;
+	background-color: #1B7D53;
+}
+.card-cover {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 240px;
+}
+
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+@media (min-width: 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+.checked {
+	color: orange;
+}
+.unchecked {
+	color: rgb(192, 192, 192);
+}
+
+.shop .btn {
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-outline-primary {
+	justify-content: center;
+	align-items: center;
+}
+
+#footer {
+	background-color: #101021;
+}
+
+.card-badge-left {
+	left: 0;
+}
+
+.card-badge-right {
+	right: 0;
+}
+
+.card-badge {
+	position: absolute;
+	top: 1.25rem;
+	z-index: 1;
+}
+
+.card > * {
+	flex-shrink: 0;
+}
+
+.badge-blue {
+	background-color: #0568fd;
+}
+
+.badge-red {
+	background-color: #fe696a;
+}
+
+.badge-green {
+	background-color: #52b788;
+}
+
+.text-uppercase {
+	text-transform: uppercase !important;
+}
+
+.badge {
+	display: inline-block;
+	padding: 0.5em 1em;
+	font-size: 12px;
+	font-weight: 500;
+	font-family: "Poppins";
+	text-align: center;
+}
+
+.bg-color {
+	background-color: #0568fd;
+}
+
+.bg-white {
+	background-color: #f2f2f2;
+}
+
+.bg-dark-2 {
+	background-color: #0c254b;
+}
+
+.btn-toggle-nav a {
+	display: inline-flex;
+	padding: 0.1875rem 0.5rem;
+	margin-top: 0.125rem;
+	margin-left: 1.25rem;
+	text-decoration: none;
+}
+.btn-toggle-nav a:hover {
+	background-color: #0568fd;
+	color: antiquewhite;
+}
+.card {
+	border: none !important;
+}
+
+.card-img-top {
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 0.25rem;
+}
+
+/* store text decoration dan text2 yang make a */
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #a87507;
+}
+.store {
+	color: #f77f00;
+}
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+	color: #fff;
+	background-color: #4992ff;
+	border-color: #4992ff;
+	box-shadow: none !important;
+}
+
+.btn-check:focus + .btn-outline-primary,
+.btn-outline-primary:focus {
+	box-shadow: none !important;
+}
+.card-img-top {
+	height: 40vh;
+	width: 100%;
+	object-fit: cover;
+}
+.tag{
+	font-size: 12px;
+	border: none;
+	font-family: "poppins";
+	border-radius: 5px;
+	color: rgb(133, 163, 219);
+}
+.linkarticle{
+  color: black;
+}
+.linkarticle::hover{
+  color: #0568fd;
+}
+
+/*  */
+/* style bay */
+/* button style */
+.btn-outline-primary {
+	color: #1B7D53;
+	border: none;
+}
+.btn-outline-primary:hover{
+	color: #1B7D53;
+	border: none;
+	background: none;
+}
+.btn-primary{
+	background-color: #1B7D53;
+	border: none;
+}
+.btn-primary:hover{
+	background-color: rgb(17, 99, 63);
+	border: none;
+}
+/* nav */
+.search {
+	position: relative;
+	outline: 0px;
+	margin-right: 10px;
+	/* padding-bottom: 10px; */
+	/* padding-left: 25px; */
+}
+
+.search input {
+	height: 40px;
+	width: 100%;
+	padding-left: 40px;
+	outline: 0px;
+	background-color: #F4F0F0;
+	border-radius: 50px;
+}
+
+.search input:focus {
+	box-shadow: none;
+	border-color: #1B7D53;
+}
+
+.search .fa-search {
+	position: absolute;
+	top: 13px;
+	left: 15px;
+}
+.navbar{
+	background-color: white;
+	box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+}
+/* end nav */
+/* heroes */
+.button-container{
+	display: flex;
+	gap: 10px;
+}
+.resep{
+	padding: 10px;
+	width: 25%;
+
+}
+.cari{
+	width: 20%;
+}
+.sales{
+	background-color: green;
+}
+.konsul{
+	font-size: 40px;
+}
+.btn-wa{
+	color: #1B7D53;
+}
+.btn-wa::hover{
+	color: black;
+}
+@media (max-width: 990px) {
+	.cont2{
+		align-items: center;
+		height: 100%;
+		padding-bottom: 50px;
+	}
+	.container-responsive{
+		width: 100%;
+	}
+	.konsul{
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 30px;
+		font-size: 30px;
+	}
+	.div-wa{
+		padding-bottom: 20px;
+	}
+	.btn-wa{
+		font-weight: 400;
+		font-size: 15px;
+	}
+}
+/* style enji */
+.inputProfil{
+	width:80%;
+}
+
+.con{
+	padding-left: 25px;
+}
+
+@media (max-width:393px) {
+	.cari{
+		font-size: 10px;
+	}
+	.gambarhome1{
+		margin-left: -10px;
+	}
+	.resep {
+		font-size: 10px;
+	}
+}
+@media (max-width:777px) {
+	.cari{
+		font-size: 10px;
+	}
+	.gambarhome1{
+		margin-left: -10px;
+	}
+	.resep {
+		font-size: 10px;
+	}
+}
+@media (max-width:949px) {
+	.text-periode{
+		font-size: 12px;
+	}
+	.konsul{
+		font-size: 20px;
+	}
+	.btn-wa{
+		font-size: 9px;
+	}
+}
+@media (max-width:992px) {
+	.text-periode{
+		font-size: 12px;
+	}
+	.konsul{
+		font-size: 20px;
+	}
+	.btn-wa{
+		font-size: 9px;
+	}
+}
+
+.btn-outline-secondary{
+	outline: 0px;
+	background-color: #F4F0F0;
+	border-radius: 50px;
+
+}
+.cardtrx{
+	box-shadow: 2px 3px 5px 4px  rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.statustrx{
+	background-color: #E2D348;
+	border-radius: 20px;
+
+}
+.status{
+	font-size: 14px;
+}
+
+.tgltrx{
+	font-size: 15px;
+}
+@media(max-width:328px){
+.button-transaksi .btn{
+	font-size: 11px;
+	margin-bottom: 10px;
+}
+.trx{
+	justify-content: space-around;
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+
+.title{
+	font-size: 3px;
+}
+.tgltrx{
+	font-size: 12px;
+}
+.status{
+	font-size: 12px;
+}
+.statustrx{
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-bottom: 3px;
+}
+
+}
+@media(max-width:574px){
+.trx{
+	justify-content: space-around;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.statustrx{
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 3px;
+}
+.button-transaksi .btn{
+	/* font-size: 11px; */
+	margin-bottom: 10px;
+}
+
+}
+
+#toast{
+	background-color: E46A25;
+}
+
+/* btn detail transaksi */
+.btn-group button {
+	background-color: #1B7D53; /* background hijau */
+	border: 1px solid  #1B7D53;/* border hijau */
+	color: white; /* teks putih */
+	padding: 10px 24px; /* padding */
+	cursor: pointer; /* ikon Pointer/hand */
+	float: left; /* Letakkan tombol secara berdampingan */
+  }
+
+  
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+	content: "";
+	clear: both;
+	display:table;
+}  
+/* Mencegah border ganda */
+.btn-group button:not(:last-child){
+	border-right: none;
+}
+ 
+/* Tambahkan warna background */
+.btn-group button:hover {
+	background-color: #ffffff;
+	color:#1B7D53 ;
+
+  }
+
+  .catat{
+	margin-bottom: 0;
+  }
+
+@media(max-width:361px) {
+	
+}
